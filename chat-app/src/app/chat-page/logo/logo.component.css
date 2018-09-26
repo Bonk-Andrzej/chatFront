@@ -1,0 +1,90 @@
+#bodyFrame{
+
+    background-size: auto;
+}
+
+
+#scena {
+    margin-left: 10px;
+    width: 200px;
+    height: 200px;
+    /*margin: 159px;*/
+    perspective: 1000px;
+    position: relative;
+}
+
+#cube {
+    position: absolute;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    /*animation: rotationCube 9s infinite alternate;*/
+}
+
+.wall {
+    opacity: 0.6;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    line-height: 200px;
+    text-align: center;
+    color: white;
+}
+.wall:hover
+{
+
+    opacity: 0.8;
+}
+
+div.front {
+    background-color: black;
+    transform: translateZ(100px);
+    opacity: 0.9;
+
+}
+div.front:hover
+{
+    background-color: brown;
+    opacity: 1;
+}
+
+div.back {
+    background-color: black;
+    transform: rotateY(180deg) translateZ(100px);
+
+}
+
+div.left {
+    background-color: yellow;
+    transform: rotateY(-90deg) translateZ(100px);
+
+}
+
+div.rigth {
+    background-color: green;
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+div.top {
+    background-color: red;
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+div.down {
+    background-color: mediumpurple;
+    transform: rotateX(-90deg) translateZ(100px);
+}
+
+
+@keyframes rotationCube {
+
+    from {
+        transform: rotateX(45deg) rotateY(45deg);
+    }
+
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+
+}
