@@ -1,3 +1,20 @@
-<p>
-  chat-page works!
-</p>
+<ng-template #menu1>
+    <div>Menu</div>
+</ng-template>
+
+
+<ng-container *ngFor="let user of users">
+    <div>
+        <p>User id: {{user.getId()}}</p>
+        <p>User name: {{user.getNick()}}</p>
+    </div>
+</ng-container>
+<button (click)="gerUsers()">Get Users</button>
+
+
+<p>Add user</p>
+<input id="login" type="text" placeholder="Login"><br/>
+<input id="password" type="password" placeholder="Password"><br/>
+<button (click)="addUser()">Add user</button>
+
+
