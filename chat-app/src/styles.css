@@ -13,3 +13,13 @@ body {
     font-family: Pacifico;
     margin: 0;
  }
+
+.box-radius{
+    border-radius: 6px;
+}
+.bg-color-green{
+    background-color: #78af0e;
+}
+.bg-color-red{
+    background-color: #d13314;
+}

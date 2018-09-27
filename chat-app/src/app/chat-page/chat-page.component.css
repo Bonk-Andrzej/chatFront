@@ -1,3 +1,138 @@
+/* Header */
+#wrapper{
+    height: 100%;
+    width: 100%;
+    float: left;
+}
+
 header{
+    height: 80px;
+    width: 100%;
+    float:left;
+}
+
+header div#logo{
+    width: 30%;
+    height: inherit;
+    float: left;
+    color: white;
+}
+header div#logo div{
+    height: 60px;
+    width: 60px;
+    margin: 10px;
+    float: left;
+}
+header div#logo p{
+    display: inline-block;
+    float: left;
+    font-size: 30px;
+    margin: 15px;
+}
+header div#search-input{
+    width: 40%;
+    height: inherit;
+    float: left;
+}
+header div#search-input input{
+    display: block;
+    border: none;
+    font-size: 13px;
+    width: 400px;
+    padding: 10px;
+    margin: 25px auto;
+    font-family: Lato;
+}
+
+header div#buttons{
+    width: 30%;
+    box-sizing: border-box;
+    height: inherit;
+    display: inline-block;
+    padding-left: 90px;
+}
+
+header div#buttons button{
+    display: block;
+    float: left;
+    font-family: "Pacifico";
+    font-size: 13px;
+    color: white;
+    width: 150px;
+    padding: 6px;
+    border: 0;
+    margin: 25px 8px;
 
 }
+header div#buttons button p{
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Chat Body*/
+
+div#chat-body{
+    box-sizing: border-box;
+    padding: 0 60px;
+    float: left;
+    width: 100%;
+    min-height: 500px;
+    height: calc(100% - 80px);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+div#active-user-list{
+    float: left;
+    height: 100%;
+    width: 30%;
+}
+div#active-user-list h1{
+    display: block;
+    width: calc(100% - 40px);
+    background-color: white;
+    height: 35px;
+    margin: 0 20px 20px 20px;
+    font-size: 18px;
+    font-family: lato;
+    box-sizing: border-box;
+    padding: 6px;;
+}
+
+
+div#active-user-list #user-list{
+    margin: 0 20px 0 20px;
+    width: calc(100%- 40px);
+    height: 100%;
+    background-color: white;
+}
+
+
+div#chat-conversations{
+    float: left;
+    width: 70%;
+    height: 100%;
+
+}
+
+div#message-list{
+    margin: 0 20px 0 20px;
+    width: calc(100%- 40px);
+    height: 100%;
+    background-color: white;
+}
+
+div#chat-conversations h1{
+    display: block;
+    width: calc(100% - 40px);
+    background-color: white;
+    height: 35px;
+    margin: 0 20px 20px 20px;
+    font-size: 18px;
+    font-family: lato;
+    box-sizing: border-box;
+    padding: 6px;;
+}
+
+

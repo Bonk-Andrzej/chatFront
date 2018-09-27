@@ -5,36 +5,37 @@
             <p>Blue chat</p>
         </div>
         <div id="search-input">
-            <input placeholder="Search">
+            <input class="box-radius" placeholder="Search">
         </div>
         <div id="buttons">
-            <button>Settings</button>
-            <button>Log out</button>
+            <button class="box-radius bg-color-green"><p>Settings</p></button>
+            <button class="box-radius bg-color-red"><p>Log out</p></button>
         </div>
     </header>
     <div id="chat-body">
         <div id="active-user-list">
-            <h1>Active user</h1>
-            <div id="user-list">
+            <h1 class="box-radius">Active user</h1>
+            <div class="box-radius" id="user-list">
                 <div class="user">
                     <div></div>
-                    <p>nick name</p>
+                    <!--<p>nick name</p>-->
                 </div>
             </div>
         </div>
         <div id="chat-conversations">
-            <h1>User name</h1>
-            <div id="message-list">
+            <h1 class="box-radius">User name</h1>
+            <div  class="box-radius" id="message-list">
                 <div class="message-box message-sender">
 
                 </div>
                 <div class="message-box message-receiver">
 
                 </div>
-            </div>
-            <div id="message-input">
-                <input type="text">
-                <button>Send</button>
+
+                <div id="message-input">
+                    <input type="text">
+                    <button>Send</button>
+                </div>
             </div>
         </div>
     </div>
