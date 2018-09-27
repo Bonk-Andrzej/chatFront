@@ -1,5 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+html{
+    height: 100%;
+    width: 100%;
+    float:left;
+}
+
 body {
-     background-color: #0c89bd;
+    height: 100%;
+    width: 100%;
+    background-color: #0c9ad2;
     font-family: Pacifico;
+    margin: 0;
  }

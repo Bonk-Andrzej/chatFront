@@ -1,15 +1,11 @@
 @import url('//fonts.googleapis.com/css?family=Pacifico&text=Pure');
 @import url('//fonts.googleapis.com/css?family=Roboto:700&text=css');
 @import url('//fonts.googleapis.com/css?family=Kaushan+Script&text=!');
-body {
-    min-height: 450px;
-    height: 100vh;
-    margin: 0;
-    background: radial-gradient(circle, #0077ea, #1f4f96, #1b2949, #000);
-}
+
 .stage {
     height: 200px;
     width: 400px;
+    float:left;
     margin: auto;
     position: absolute;
     top: 0;
@@ -36,7 +32,8 @@ body {
     height: 100%;
     width: 100%;
     position: absolute;
-    top: 50px;
+    top: 0px;
+    left: 0px;
     color: #f5f5f5;
     letter-spacing: -2px;
     text-shadow: 4px 0 10px rgba(0, 0, 0, .13);

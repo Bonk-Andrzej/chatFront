@@ -1,3 +1,23 @@
-<p>
-  login-page works!
-</p>
+<div id="mainPage">
+  <ng-template #menu1>
+    <div>Menu</div>
+  </ng-template>
+
+  <ng-container *ngFor="let user of users">
+    <div>
+      <p>User id: {{user.getId()}}</p>
+      <p>User name: {{user.getNick()}}</p>
+    </div>
+  </ng-container>
+  <button (click)="gerUsers()">Get Users</button>
+
+
+  <div class="loggingBox">
+    <!--<app-logo2></app-logo2>-->
+    <input id="login" class="default-radius" type="text" placeholder="  Login"><br/>
+    <input id="password" class="default-radius"  type="password" placeholder="  Password"><br/>
+    <button id="buttonRegister" class="default-radius"  (click)="addUser()">Register</button>
+    <button id="buttonLogIn" class="default-radius" >Log in</button>
+
+  </div>
+</div>

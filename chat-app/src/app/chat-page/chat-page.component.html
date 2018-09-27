@@ -1,25 +1,41 @@
-<div id="mainPage">
-    <ng-template #menu1>
-        <div>Menu</div>
-    </ng-template>
-
-    <ng-container *ngFor="let user of users">
-        <div>
-            <p>User id: {{user.getId()}}</p>
-            <p>User name: {{user.getNick()}}</p>
+<div id="wrapper">
+    <header>
+        <div id="logo">
+            <div></div>
+            <p>Blue chat</p>
         </div>
-    </ng-container>
-    <button (click)="gerUsers()">Get Users</button>
+        <div id="search-input">
+            <input placeholder="Search">
+        </div>
+        <div id="buttons">
+            <button>Settings</button>
+            <button>Log out</button>
+        </div>
+    </header>
+    <div id="chat-body">
+        <div id="active-user-list">
+            <h1>Active user</h1>
+            <div id="user-list">
+                <div class="user">
+                    <div></div>
+                    <p>nick name</p>
+                </div>
+            </div>
+        </div>
+        <div id="chat-conversations">
+            <h1>User name</h1>
+            <div id="message-list">
+                <div class="message-box message-sender">
 
-    <app-logo2></app-logo2>
-    <div class="loggingBox">
-        <app-logo></app-logo>
-        <br>
-        <!--<p id="textBoxingChat">Boxing Chat</p>-->
-        <input id="login" type="text" placeholder="  Login"><br/>
-        <input id="password" type="password" placeholder="  Password"><br/>
-        <button id="buttonRegister" (click)="addUser()">Register</button>
-        <button id="buttonLogIn">Log in</button>
+                </div>
+                <div class="message-box message-receiver">
 
+                </div>
+            </div>
+            <div id="message-input">
+                <input type="text">
+                <button>Send</button>
+            </div>
+        </div>
     </div>
 </div>
