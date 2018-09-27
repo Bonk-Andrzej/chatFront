@@ -6,8 +6,8 @@
 
 #scena {
     margin-left: 10px;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     /*margin: 159px;*/
     perspective: 1000px;
     position: relative;
@@ -26,8 +26,8 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    font-size: 30px;
-    line-height: 200px;
+    font-size: 15px;
+    line-height: 100px;
     text-align: center;
     color: white;
 }
@@ -38,42 +38,47 @@
 }
 
 div.front {
-    background-color: black;
-    transform: translateZ(100px);
+
+    background-color: #1b2949;
+    transform: translateZ(50px);
     opacity: 0.9;
 
 }
 div.front:hover
 {
-    background-color: brown;
+
+    background-color: #00366b;
     opacity: 1;
 }
 
 div.back {
-    background-color: black;
-    transform: rotateY(180deg) translateZ(100px);
+
+    background-color:blue ;
+    transform: rotateY(180deg) translateZ(50px);
 
 }
 
 div.left {
-    background-color: yellow;
-    transform: rotateY(-90deg) translateZ(100px);
+
+    background-color: dodgerblue;
+    transform: rotateY(-90deg) translateZ(50px);
 
 }
 
 div.rigth {
-    background-color: green;
-    transform: rotateY(90deg) translateZ(100px);
+    background-color: blueviolet;
+    transform: rotateY(90deg) translateZ(50px);
 }
 
 div.top {
-    background-color: red;
-    transform: rotateX(90deg) translateZ(100px);
+
+    background-color: lightskyblue;
+    transform: rotateX(90deg) translateZ(50px);
 }
 
 div.down {
-    background-color: mediumpurple;
-    transform: rotateX(-90deg) translateZ(100px);
+    background-color: mediumblue;
+    transform: rotateX(-90deg) translateZ(50px);
 }
 
 

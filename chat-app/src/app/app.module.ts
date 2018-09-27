@@ -7,13 +7,15 @@ import {LoginPageComponent} from './login-page/login-page.component';
 import {AppRoutingModule} from './app-routing.module';
 import {LogoComponent} from './chat-page/logo/logo.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
+import { Logo2Component } from './chat-page/logo2/logo2.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         ChatPageComponent,
         LoginPageComponent,
-        LogoComponent
+        LogoComponent,
+        Logo2Component
     ],
     imports: [
         BrowserModule,
