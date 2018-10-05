@@ -9,7 +9,6 @@ html{
 body {
     height: 100%;
     width: 100%;
-    background-color: #0c9ad2;
     font-family: Pacifico;
     margin: 0;
  }
@@ -22,4 +21,8 @@ body {
 }
 .bg-color-red{
     background-color: #d13314;
+}
+
+.bg-color-blue{
+    background-color: #0c9ad2;
 }

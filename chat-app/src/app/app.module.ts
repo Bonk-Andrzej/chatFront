@@ -8,6 +8,9 @@ import {AppRoutingModule} from './app-routing.module';
 import {LogoComponent} from './login-page/logo/logo.component';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { Logo2Component } from './login-page/logo2/logo2.component';
+import { HeaderComponent } from './chat-page/header/header.component';
+import { ConversationsComponent } from './chat-page/conversations/conversations.component';
+import { ActiveUserListComponent } from './chat-page/active-user-list/active-user-list.component';
 
 @NgModule({
     declarations: [
@@ -15,14 +18,17 @@ import { Logo2Component } from './login-page/logo2/logo2.component';
         ChatPageComponent,
         LoginPageComponent,
         LogoComponent,
-        Logo2Component
+        Logo2Component,
+        HeaderComponent,
+        ConversationsComponent,
+        ActiveUserListComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule
     ],
-   // providers: [HttpClient],
+   providers: [],
     bootstrap: [AppComponent]
 })
 export class AppModule {

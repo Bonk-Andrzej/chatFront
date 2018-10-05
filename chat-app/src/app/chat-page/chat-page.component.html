@@ -1,42 +1,13 @@
 <div id="wrapper">
     <header>
-        <div id="logo">
-            <div></div>
-            <p>Blue chat</p>
-        </div>
-        <div id="search-input">
-            <input class="box-radius" placeholder="Search">
-        </div>
-        <div id="buttons">
-            <button class="box-radius bg-color-green"><p>Settings</p></button>
-            <button class="box-radius bg-color-red"><p>Log out</p></button>
-        </div>
+        <app-header></app-header>
     </header>
     <div id="chat-body">
         <div id="active-user-list">
-            <h1 class="box-radius">Active user</h1>
-            <div class="box-radius" id="user-list">
-                <div class="user">
-                    <div></div>
-                    <!--<p>nick name</p>-->
-                </div>
-            </div>
+            <app-active-user-list></app-active-user-list>
         </div>
-        <div id="chat-conversations">
-            <h1 class="box-radius">User name</h1>
-            <div  class="box-radius" id="message-list">
-                <div class="message-box message-sender">
-
-                </div>
-                <div class="message-box message-receiver">
-
-                </div>
-
-                <div id="message-input">
-                    <input type="text">
-                    <button>Send</button>
-                </div>
-            </div>
+        <div  id="chat-conversations">
+            <app-conversations></app-conversations>
         </div>
     </div>
 </div>

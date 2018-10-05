@@ -1,0 +1,9 @@
+
+<h1 class="box-radius">Active user</h1>
+<div class="box-radius" id="user-list">
+  <ng-container *ngFor="let user of users">
+  <div (click)="sendIdToConversationService(user.getId())" class="user">
+    <p>{{user.getNick() | uppercase}}</p>
+  </div>
+  </ng-container>
+</div>
