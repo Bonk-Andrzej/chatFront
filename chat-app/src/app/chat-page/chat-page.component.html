@@ -1,13 +1,10 @@
 <div id="wrapper">
-    <header>
-        <app-header></app-header>
-    </header>
+    <app-header id="header"></app-header>
     <div id="chat-body">
-        <div id="active-user-list">
-            <app-active-user-list></app-active-user-list>
-        </div>
-        <div  id="chat-conversations">
-            <app-conversations></app-conversations>
+        <div id="chat-body-wrapper">
+            <app-active-user-list id="active-user-list"></app-active-user-list>
+            <app-conversations id="conversations"></app-conversations>
+
         </div>
     </div>
 </div>

@@ -1,10 +1,15 @@
-
-<h1 class="box-radius">Active user</h1>
-<div class="box-radius" id="user-list">
-  <ng-container *ngFor="let user of users">
-  <div (click)="sendIdToConversationService(user.getId())" class="user">
-    <p>{{user.getNick() | uppercase}}</p>
-
-  </div>
-  </ng-container>
+<div id="active-user-wrapper">
+    <div id="active-user-bar"></div>
+    <div id="active-user-header">
+        <p id="users">Users</p>
+        <p id="active-user-filter"></p>
+    </div>
+    <div id="active-user-list">
+        <ng-container *ngFor="let user of users">
+            <div (click)="sendIdToConversationService(user.getId())" class="user">
+                <span id="active-user-status"></span>
+                <p>{{user.getNick() | uppercase}}</p>
+            </div>
+        </ng-container>
+    </div>
 </div>

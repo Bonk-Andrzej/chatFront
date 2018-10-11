@@ -6,7 +6,7 @@ import {UserRepositoryService} from '../../services/user-repository/user-reposit
 @Component({
     selector: 'app-active-user-list',
     templateUrl: './active-user-list.component.html',
-    styleUrls: ['./active-user-list.component.css', './style.scss']
+    styleUrls: ['./active-user-list.component.scss']
 })
 export class ActiveUserListComponent implements OnInit {
 

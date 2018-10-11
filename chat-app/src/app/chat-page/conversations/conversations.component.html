@@ -1,15 +1,26 @@
-<h1 class="box-radius">User name</h1>
-<div class="box-radius" id="message-box">
-  <div id="message-list">
-    <div class="message-box message-sender">
-
+<div id="wrapper-conversation">
+    <p id="conversation-bar"></p>
+    <div id="conversation-header">
+        <p id="conversation-brand-chat">Chat</p>
+        <p id="conversation-interlocutors">Igor : Jastrzab</p>
+        <p id="conversation-filter"> X</p>
     </div>
-    <div class="message-box message-receiver">
 
+    <div id="conversation-box">
+        <div id="conversation-list">
+            <div class="message-box-message-sender-wrapper">
+                <p id="message-box-message-sender-timer">22:59</p>
+                <div class="message-box-message-sender">MESSAGE SENDER</div>
+            </div>
+
+            <div class="message-box-message-receiver-wrapper">
+                <p id="message-box-message-receiver-timer">23:00</p>
+                <div class="message-box-message-receiver">MESSAGE RECEIVER</div>
+            </div>
+        </div>
+        <div class="conversation-input">
+            <input id="conversation-text-input" type="text">
+            <button id="conversation-button-send"></button>
+        </div>
     </div>
-  </div>
-  <div id="message-input">
-    <input type="text">
-    <button class="bg-color-blue">Send</button>
-  </div>
 </div>
