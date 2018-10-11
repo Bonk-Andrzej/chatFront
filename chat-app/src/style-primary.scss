@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+$box-radius : 6px;
+$color-blue: #0e68c5;
+$color-green: #56c130;
+$color-red: #df1b37;
+$color-black: #141718;
+$color-white: #e5e5e5;
+$font-Pacifico : "Pacifico";
+
+html {
+  height: 100%;
+  width: 100%;
+  float: left;
+
+  body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    background-color: $color-blue;
+  }
+}
+
