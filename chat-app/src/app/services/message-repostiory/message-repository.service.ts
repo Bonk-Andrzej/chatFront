@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {MessageDTO} from './messageDTO';
 
+
 @Injectable({
     providedIn: 'root'
 })
@@ -24,6 +25,7 @@ export class MessagesRepositoryService {
     }
 
     public getMessages(): Observable<Array<MessageDTO>> {
-        return this.http.get(this.host, this.getHeaders().values());
+        const headers = this.getHeaders();
+                return this.http.get<Array<MessageDTO>>(this.host, {headers: headers});
     }
 }

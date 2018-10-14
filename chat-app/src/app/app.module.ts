@@ -11,6 +11,7 @@ import {ActiveUserListComponent} from './chat-page/active-user-list/active-user-
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -19,6 +20,7 @@ import {HttpClientModule} from '@angular/common/http';
         HeaderComponent,
         ConversationsComponent,
         ActiveUserListComponent,
+
     ],
     imports: [
         BrowserModule,

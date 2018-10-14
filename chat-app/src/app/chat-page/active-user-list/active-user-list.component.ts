@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {HttpClient} from '../../../../node_modules/@angular/common/http';
 import {User} from '../../services/user-repository/user';
 import {UserRepositoryService} from '../../services/user-repository/user-repository.service';
 
@@ -11,11 +10,9 @@ import {UserRepositoryService} from '../../services/user-repository/user-reposit
 export class ActiveUserListComponent implements OnInit {
 
     public users: Array<User>;
-    private http: HttpClient;
     private userRepository: UserRepositoryService;
 
-    constructor(http: HttpClient, userRepository: UserRepositoryService) {
-        this.http = http;
+    constructor(userRepository: UserRepositoryService) {
         this.userRepository = userRepository;
         this.users = [];
     }
@@ -28,8 +25,15 @@ export class ActiveUserListComponent implements OnInit {
             }
         });
     }
-    sendIdToConversationService(id: number) {
-        console.log(id)
-        this.userRepository.deleteUser(id).subscribe();
+
+    sendIdToConversationService(user: User) {
+        this.userRepository.deleteUser(user.id).subscribe();
+        let i = 0;
+        for (const user1 of this.users) {
+            if (user === user1) {
+                this.users.splice(i, 1);
+            }
+            i++;
+        }
     }
 }

@@ -31,7 +31,9 @@ export class UserRepositoryService {
     }
 
     public postNewUser(newUser: NewUser): Observable<NewUser> {
-        return this.http.post<NewUser>(this.host, {nick: newUser.nick, password: newUser.password, getHeaders().valueOf());
+        const headers = this.getHeaders();
+
+        return this.http.post<NewUser>(this.host, {nick: newUser.nick, password: newUser.password, headers});
     }
 
     public getUserById(id: number): Observable<UserDTO> {
