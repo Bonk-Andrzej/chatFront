@@ -10,17 +10,19 @@
         <div id="conversation-list">
             <div class="message-box-message-sender-wrapper">
                 <p id="message-box-message-sender-timer">22:59</p>
-                <div class="message-box-message-sender">MESSAGE SENDER</div>
+                <div class="message-box-message-sender" >MESSAGE SENDER</div>
             </div>
 
             <div class="message-box-message-receiver-wrapper">
-                <p id="message-box-message-receiver-timer">23:00</p>
-                <div class="message-box-message-receiver">MESSAGE RECEIVER</div>
+                <p id="message-box-message-receiver-timer"></p>
+                <div class="message-box-message-receiver" >{{messageReceiver}}</div>
+
+
             </div>
         </div>
         <div class="conversation-input">
             <input id="conversation-text-input" type="text">
-            <button id="conversation-button-send"></button>
+            <button id="conversation-button-send" (click)="printMsgOnBox()" )></button>
         </div>
     </div>
 </div>

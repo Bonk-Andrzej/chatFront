@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {NewUser} from '../services/user-repository/newUser';
+import {UserRepositoryService} from '../services/user-repository/user-repository.service';
 
 @Component({
     selector: 'app-login-page',
@@ -8,7 +10,7 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class LoginPageComponent implements OnInit {
 
-    constructor(private http: HttpClient) {
+    constructor(private http: HttpClient, private userRepository: UserRepositoryService) {
     }
 
     ngOnInit() {
@@ -28,10 +30,24 @@ export class LoginPageComponent implements OnInit {
         headers.set('Content-Type', 'application/json');
         headers.set('Access-Control-Allow-Origin', '*');
         headers.set('Access-Control-Allow-Origin', 'true');
-        const objectObservable = this.http.post('http://51.38.133.76:90/users', {nick: login.value, password: pass.value, headers});
+        const objectObservable = this.http.post('http://localhost:8080/users', {nick: login.value, password: pass.value, headers});
 
         objectObservable.subscribe((e) => {
         }, (e) => {
+        });
+    }
+
+    public addUser2() {
+        const login: HTMLInputElement = document.querySelector('#login');
+        const pass: HTMLInputElement = document.querySelector('#password');
+
+        const newUser: NewUser = new NewUser(login.value, pass.value);
+        console.log(newUser.nick);
+        console.log(newUser.password);
+
+        const objectObservable = this.userRepository.postNewUser(newUser);
+        objectObservable.subscribe(msg => {
+            console.log(msg);
         });
     }
 }

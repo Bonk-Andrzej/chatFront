@@ -22,15 +22,14 @@ export class ActiveUserListComponent implements OnInit {
 
     ngOnInit() {
 
-        this.userRepository.getAllUsers().subscribe(users => {
+        this.userRepository.getUsers().subscribe(users => {
             for (const user of users) {
                 this.users.push(new User(user.id, user.nick));
             }
         });
-
     }
-
     sendIdToConversationService(id: number) {
-        console.log(id);
+        console.log(id)
+        this.userRepository.deleteUser(id).subscribe();
     }
 }

@@ -6,5 +6,4 @@ export class UserDTO {
         this.id = id;
         this.nick = nick;
     }
-
 }

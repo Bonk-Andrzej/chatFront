@@ -5,10 +5,11 @@ import {AppComponent} from './app.component';
 import {ChatPageComponent} from './chat-page/chat-page.component';
 import {LoginPageComponent} from './login-page/login-page.component';
 import {AppRoutingModule} from './app-routing.module';
-import {HttpClientModule} from '@angular/common/http';
 import {HeaderComponent} from './chat-page/header/header.component';
 import {ConversationsComponent} from './chat-page/conversations/conversations.component';
 import {ActiveUserListComponent} from './chat-page/active-user-list/active-user-list.component';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
     declarations: [
@@ -17,12 +18,13 @@ import {ActiveUserListComponent} from './chat-page/active-user-list/active-user-
         LoginPageComponent,
         HeaderComponent,
         ConversationsComponent,
-        ActiveUserListComponent
+        ActiveUserListComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        HttpClientModule
+        HttpClientModule,
+        FormsModule
     ],
    providers: [],
     bootstrap: [AppComponent]
