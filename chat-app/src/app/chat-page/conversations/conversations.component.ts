@@ -4,6 +4,9 @@ import {MessageDTO} from '../../services/message-repostiory/messageDTO';
 import {MessagesRepositoryService} from '../../services/message-repostiory/message-repository.service';
 import {LoginPageComponent} from '../../login-page/login-page.component';
 import {MessageSEND} from '../../services/message-repostiory/messageSEND';
+import {AuthorizationServiceService} from '../../services/authorization-service/authorization-service.service';
+import {Router} from '@angular/router';
+import {User} from '../../services/user-repository/user';
 
 
 @Component({
@@ -13,20 +16,24 @@ import {MessageSEND} from '../../services/message-repostiory/messageSEND';
 })
 export class ConversationsComponent implements OnInit {
 
-    // private loginPageComponent: LoginPageComponent;
-    private messagesRepository: MessagesRepositoryService;
     public listMessages: Array<MessageDTO>;
     public messageReceiver = 'MESSAGE RECEIVER';
+    public authorizatedUser: User;
 
 
-    constructor(messageRepository: MessagesRepositoryService,) {
-        this.messagesRepository = messageRepository;
-        // this.loginPageComponent = loginPageComponent;
+    constructor(private messagesRepository: MessagesRepositoryService,
+                private autenticateService: AuthorizationServiceService,
+                private router: Router) {
         this.listMessages = [];
     }
 
     ngOnInit() {
-        // console.log(this.loginPageComponent.getLoggedIdUser());
+        if (!this.autenticateService.isAuthorizated()) {
+            this.router.navigateByUrl('/login');
+        } else {
+            this.authorizatedUser = this.autenticateService.getAuthorizatedUser();
+            console.log(this.authorizatedUser);
+        }
     }
 
     public printMsgOnBox() {
@@ -53,7 +60,6 @@ export class ConversationsComponent implements OnInit {
             console.log(message);
         });
         console.log(content.value);
-
         console.log(idReceiver);
         console.log(idSender);
     }

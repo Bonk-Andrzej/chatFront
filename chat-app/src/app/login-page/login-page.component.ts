@@ -2,6 +2,10 @@ import {Component, OnInit, Output} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {NewUser} from '../services/user-repository/newUser';
 import {UserRepositoryService} from '../services/user-repository/user-repository.service';
+import {AuthorizationServiceService} from '../services/authorization-service/authorization-service.service';
+import {p} from '@angular/core/src/render3';
+
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-login-page',
@@ -12,8 +16,16 @@ export class LoginPageComponent implements OnInit {
 
     public access = '';
     private loggedIdUser: number;
+    public statusBar = {
+        'backgroundColor': '#56c130'
+    };
+    // $color-green: #56c130;
+    // $color-red: #df1b37;
 
-    constructor(private http: HttpClient, private userRepository: UserRepositoryService) {
+    constructor(private http: HttpClient,
+                private userRepository: UserRepositoryService,
+                private authorizationService: AuthorizationServiceService,
+                private router: Router) {
     }
 
     ngOnInit() {
@@ -58,20 +70,24 @@ export class LoginPageComponent implements OnInit {
         const login: HTMLInputElement = document.querySelector('#login');
         const pass: HTMLInputElement = document.querySelector('#password');
 
-        const objectObservable = this.userRepository.getUserByNickPass(login.value, pass.value);
-        objectObservable.subscribe(user => {
-            if (user) {
-                this.access = '/chat';
-                this.loggedIdUser = user.id;
-            }
-            console.log(user);
+        this.authorizationService.authenticate(login.value, pass.value);
+
+        this.authorizationService.onAuthorizated(() => {
+            this.router.navigateByUrl('/chat');
         });
+        this.authorizationService.onFaild(() => {
+                this.statusBar.backgroundColor = '#df1b37';
+            }
+        );
     }
+
 
     public getLoggedIdUser() {
         return this.loggedIdUser;
     }
 
 }
+
+
 
 
