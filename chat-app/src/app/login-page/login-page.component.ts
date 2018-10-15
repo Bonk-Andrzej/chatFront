@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {NewUser} from '../services/user-repository/newUser';
 import {UserRepositoryService} from '../services/user-repository/user-repository.service';
@@ -9,6 +9,9 @@ import {UserRepositoryService} from '../services/user-repository/user-repository
     styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
+
+    public access = '';
+    private loggedIdUser: number;
 
     constructor(private http: HttpClient, private userRepository: UserRepositoryService) {
     }
@@ -37,7 +40,7 @@ export class LoginPageComponent implements OnInit {
         });
     }
 
-    public addUser2() {
+    public registerUser() {
         const login: HTMLInputElement = document.querySelector('#login');
         const pass: HTMLInputElement = document.querySelector('#password');
 
@@ -50,5 +53,25 @@ export class LoginPageComponent implements OnInit {
             console.log(msg);
         });
     }
+
+    public loginUser() {
+        const login: HTMLInputElement = document.querySelector('#login');
+        const pass: HTMLInputElement = document.querySelector('#password');
+
+        const objectObservable = this.userRepository.getUserByNickPass(login.value, pass.value);
+        objectObservable.subscribe(user => {
+            if (user) {
+                this.access = '/chat';
+                this.loggedIdUser = user.id;
+            }
+            console.log(user);
+        });
+    }
+
+    public getLoggedIdUser() {
+        return this.loggedIdUser;
+    }
+
 }
+
 

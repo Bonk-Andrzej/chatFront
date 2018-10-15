@@ -41,19 +41,24 @@ export class UserRepositoryService {
     }
 
     public repleaceUser(newUser: NewUser, id: number): Observable<NewUser> {
-        const param = new HttpParams().set('id', id + '');
-        return this.http.put<NewUser>(this.host, {body: newUser, HttpHeaders: this.getHeaders()}, {params: param});
+        const headers = this.getHeaders();
+        return this.http.put<NewUser>(this.host, {nick: newUser.nick, password: newUser.password, headers});
     }
 
-    public updateUser(newUser: NewUser, id: number): Observable<NewUser> {
-        const param = new HttpParams().set('id', id + '');
-        return this.http.post<NewUser>(this.host, {headers: this.getHeaders(), params: param});
-    }
+    // public updateUser(newUser: NewUser, id: number): Observable<NewUser> {
+    //     // const param = new HttpParams().set('id', id + '');
+    //     // const headers = this.getHeaders();
+    //     // return this.http.post<NewUser>(this.host, {{nick: newUser.nick, password: newUser.password, headers});
+    // }
 
     public deleteUser(id: number) {
 
         return this.http.delete<UserDTO>(this.host + '/' + id, {headers: this.getHeaders()});
     }
 
+    public getUserByNickPass(nick: string, pass: string) {
+        const headers = this.getHeaders();
+        return this.http.get<UserDTO>(this.host + '/login/' + nick + ',' + pass);
+    }
 }
 
