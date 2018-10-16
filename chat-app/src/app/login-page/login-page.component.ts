@@ -19,8 +19,7 @@ export class LoginPageComponent implements OnInit {
     public statusBar = {
         'backgroundColor': '#56c130'
     };
-    // $color-green: #56c130;
-    // $color-red: #df1b37;
+
 
     constructor(private http: HttpClient,
                 private userRepository: UserRepositoryService,

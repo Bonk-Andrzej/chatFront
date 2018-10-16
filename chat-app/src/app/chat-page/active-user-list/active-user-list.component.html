@@ -6,9 +6,9 @@
     </div>
     <div id="active-user-list">
         <ng-container *ngFor="let user of users">
-            <div (click)="sendIdToConversationService(user)" class="user">
+            <div (click)="sendUserToConversationService(user)" class="user">
                 <span id="active-user-status"></span>
-                <p>{{user.getNick() | uppercase}}</p>
+                <p>{{user.nick | uppercase}}</p>
             </div>
         </ng-container>
     </div>

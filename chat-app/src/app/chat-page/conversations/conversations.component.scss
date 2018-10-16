@@ -144,12 +144,15 @@
 
       }
       #conversation-button-send {
+        margin: 0;
+
         transform: rotate(45deg);
         width: 80px;
         height: 100%;
         right: -3px;
         top: 0;
         border: 0;
+        outline: none;
         background: url("./../../../assets/arrow_black.png") no-repeat center;
         background-size: 25px;
   position: absolute;

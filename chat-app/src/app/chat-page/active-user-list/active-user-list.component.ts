@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {User} from '../../services/user-repository/user';
+
 import {UserRepositoryService} from '../../services/user-repository/user-repository.service';
+import {AuthorizationServiceService} from '../../services/authorization-service/authorization-service.service';
+import {MessageServiceService} from '../../services/messege-service/message-service.service';
+import {UserDTO} from '../../services/user-repository/user-d-t.o';
 
 @Component({
     selector: 'app-active-user-list',
@@ -9,11 +12,13 @@ import {UserRepositoryService} from '../../services/user-repository/user-reposit
 })
 export class ActiveUserListComponent implements OnInit {
 
-    public users: Array<User>;
-    private userRepository: UserRepositoryService;
+    public users: Array<UserDTO>;
 
-    constructor(userRepository: UserRepositoryService) {
-        this.userRepository = userRepository;
+
+    constructor(private userRepository: UserRepositoryService,
+                private authorizationService: AuthorizationServiceService,
+                private messageService: MessageServiceService) {
+
         this.users = [];
     }
 
@@ -21,19 +26,15 @@ export class ActiveUserListComponent implements OnInit {
 
         this.userRepository.getUsers().subscribe(users => {
             for (const user of users) {
-                this.users.push(new User(user.id, user.nick));
+                this.users.push(new UserDTO(user.id, user.nick));
             }
         });
     }
 
-    sendIdToConversationService(user: User) {
-        this.userRepository.deleteUser(user.id).subscribe();
-        let i = 0;
-        for (const user1 of this.users) {
-            if (user === user1) {
-                this.users.splice(i, 1);
-            }
-            i++;
-        }
+    sendUserToConversationService(user: UserDTO) {
+        this.messageService.setReceiver(user);
+        console.log(this.messageService.getSender().id);
+        console.log(this.messageService.getReceiver().id);
     }
+
 }
