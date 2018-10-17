@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
 
 @Component({
     selector: 'app-chat-page',
@@ -6,6 +6,9 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./chat-page.component.scss']
 })
 export class ChatPageComponent implements OnInit {
+    @Output() activeUserStatusBar2 = {
+        'backgroundColor': '#df1b37'
+    };
     ngOnInit(): void {
     }
 

@@ -13,8 +13,6 @@ export class MessageServiceService {
     private sender: UserDTO;
     private receiver: UserDTO;
 
-    private receiverMessages: Array<MessageDTO>;
-
     constructor(private messageRepository: MessagesRepositoryService) {
     }
 

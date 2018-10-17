@@ -14,8 +14,8 @@ export class UserRepositoryService {
 
     constructor(http: HttpClient) {
         this.http = http;
-        // this.host = 'http://51.38.133.76:90/users/';
-        this.host = 'http://localhost:8080/users';
+        this.host = 'http://51.38.133.76:90/users';
+        // this.host = 'http://localhost:8080/users';
     }
 
     private getHeaders(): HttpHeaders {

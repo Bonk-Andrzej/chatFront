@@ -13,7 +13,9 @@ import {UserDTO} from '../../services/user-repository/user-d-t.o';
 export class ActiveUserListComponent implements OnInit {
 
     public users: Array<UserDTO>;
-
+    public activeUserStatusBar = {
+        'backgroundColor': '#df1b37'
+    };
 
     constructor(private userRepository: UserRepositoryService,
                 private authorizationService: AuthorizationServiceService,
@@ -35,6 +37,7 @@ export class ActiveUserListComponent implements OnInit {
         this.messageService.setReceiver(user);
         console.log(this.messageService.getSender().id);
         console.log(this.messageService.getReceiver().id);
+        this.activeUserStatusBar.backgroundColor = '#56c130';
     }
 
 }
