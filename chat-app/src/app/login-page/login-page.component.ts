@@ -1,7 +1,7 @@
 import {Component, OnInit, Output} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {NewUser} from '../services/user-repository/newUser';
-import {UserRepositoryService} from '../services/user-repository/user-repository.service';
+import {NewUser} from '../repository/user-repository/newUser';
+import {UserRepositoryService} from '../repository/user-repository/user-repository.service';
 import {AuthorizationServiceService} from '../services/authorization-service/authorization-service.service';
 import {p} from '@angular/core/src/render3';
 

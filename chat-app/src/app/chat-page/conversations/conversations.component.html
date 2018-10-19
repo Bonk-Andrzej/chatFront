@@ -1,5 +1,5 @@
 <div id="wrapper-conversation">
-    <div id="conversation-bar"></div>
+    <div [ngStyle]="conversationStatusBar" id="conversation-bar"></div>
     <div id="conversation-header">
         <p id="conversation-brand-chat">Chat</p>
         <p id="conversation-interlocutors">Igor : Jastrzab</p>
@@ -7,20 +7,28 @@
     </div>
 
     <div id="conversation-box">
-        <div id="conversation-list">
-            <div class="message-box-message-sender-wrapper">
-                <p id="message-box-message-sender-timer">22:59</p>
-                <div class="message-box-message-sender" >MESSAGE SENDER</div>
-            </div>
+        <div *ngIf="displayLayou" id="conversation-list">
 
-            <div class="message-box-message-receiver-wrapper">
-                <p id="message-box-message-receiver-timer"></p>
-                <div class="message-box-message-receiver" >{{messageReceiver}}</div>
+            <ng-container *ngFor="let message of conversation">
+                <ng-container *ngIf="(message.idSender === sender.idUser); then senderT; else recieverT"></ng-container>
 
+                <ng-template #senderT>
+                    <div class="message-box-message-sender-wrapper">
+                        <p id="message-box-message-sender-timer">{{message.sendDate}}</p>
+                        <div class="message-box-message-sender">{{message.content+ " send"}}-{{message.idSender}}-{{sender.idUser}}</div>
+                    </div>
+                </ng-template>
 
-            </div>
+                <ng-template #recieverT>
+                    <div class="message-box-message-receiver-wrapper">
+                        <p id="message-box-message-receiver-timer">{{message.sendDate}}</p>
+                        <div class="message-box-message-receiver">{{message.content+ " rec"}}</div>
+                    </div>
+                </ng-template>
+            </ng-container>
+
         </div>
-        <div class="conversation-input">
+        <div *ngIf="displayLayou" class="conversation-input">
             <input id="conversation-text-input" type="text">
             <button id="conversation-button-send" (click)="sendMessage()"></button>
         </div>

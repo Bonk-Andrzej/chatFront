@@ -6,7 +6,6 @@ import {MessageSEND} from './messageSEND';
 import {UserDTO} from '../user-repository/user-d-t.o';
 
 
-
 @Injectable({
     providedIn: 'root'
 })
@@ -16,8 +15,8 @@ export class MessagesRepositoryService {
 
     constructor(http: HttpClient) {
         this.http = http;
-        this.host = 'http://51.38.133.76:90/messages';
-        // this.host = 'http://localhost:8080/messages';
+        // this.host = 'http://51.38.133.76:90/messages';
+        this.host = 'http://localhost:8080/messages';
     }
 
     private getHeaders(): HttpHeaders {
@@ -35,22 +34,27 @@ export class MessagesRepositoryService {
 
     public postMessages(messageSEND: MessageSEND): Observable<MessageSEND> {
         const headers = this.getHeaders();
-
-        return this.http.post<MessageSEND>(this.host, {
+        console.log(JSON.stringify(messageSEND));
+        console.log(messageSEND);
+        const messageToSend = {
             content: messageSEND.content,
-            idSender: messageSEND.idSender, idReceiver: messageSEND.idReceiver
-        }, {headers: headers});
+            idReceiver: messageSEND.idReceiver,
+            idSender: messageSEND.idSender
+        };
+
+        return this.http.post<MessageSEND>(this.host, messageToSend, {headers: headers});
     }
 
-    // public getMessagesByUser(idSender: number): Observable<MessageDTO> {
-    //     const param = new HttpParams().set('idSender', idSender + '');
-    //     const headers = this.getHeaders();
-    //     return this.http.get<MessageDTO>(this.host, {headers: headers, params: param});
-    // }
-
-    public getMessages(sender: UserDTO, receiver: UserDTO, startBound: number, toBound): Observable<Array<MessageDTO>> {
+    public getMessages(sender: UserDTO, receiver: UserDTO, startBound: number, toBound: number): Observable<Array<MessageDTO>> {
         const headers = this.getHeaders();
         return this.http.get<Array<MessageDTO>>(
-            this.host + '/by/' + sender.id + ',' + receiver.id + '/' + startBound + ',' + toBound, {headers: headers});
+            this.host + '/by/' + sender.idUser + ',' + receiver.idUser + '/' + startBound + ',' + toBound, {headers: headers});
+    }
+
+    public getConversation(sender: UserDTO, receiver: UserDTO, limit: number, toBound: number): Observable<Array<MessageDTO>> {
+        const headers = this.getHeaders();
+        return this.http.get<Array<MessageDTO>>(
+            this.host + '/conversation/' + sender.idUser + ',' + receiver.idUser + '/' + limit + ',' + toBound, {headers: headers});
+
     }
 }

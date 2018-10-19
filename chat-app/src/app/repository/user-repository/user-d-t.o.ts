@@ -1,19 +1,19 @@
 export class UserDTO {
-    private _id: number;
+    private _idUser: number;
     private _nick: string;
 
     constructor(id: number, nick: string) {
-        this._id = id;
+        this._idUser = id;
         this._nick = nick;
     }
 
 
-    get id(): number {
-        return this._id;
+    get idUser(): number {
+        return this._idUser;
     }
 
-    set id(value: number) {
-        this._id = value;
+    set idUser(value: number) {
+        this._idUser = value;
     }
 
     get nick(): string {

@@ -14,8 +14,8 @@ export class UserRepositoryService {
 
     constructor(http: HttpClient) {
         this.http = http;
-        this.host = 'http://51.38.133.76:90/users';
-        // this.host = 'http://localhost:8080/users';
+        // this.host = 'http://51.38.133.76:90/users';
+        this.host = 'http://localhost:8080/users';
     }
 
     private getHeaders(): HttpHeaders {
@@ -45,8 +45,8 @@ export class UserRepositoryService {
         return this.http.put<NewUser>(this.host, {nick: newUser.nick, password: newUser.password, headers});
     }
 
-    // public updateUser(newUser: NewUser, id: number): Observable<NewUser> {
-    //     // const param = new HttpParams().set('id', id + '');
+    // public updateUser(newUser: NewUser, idUser: number): Observable<NewUser> {
+    //     // const param = new HttpParams().set('idUser', idUser + '');
     //     // const headers = this.getHeaders();
     //     // return this.http.post<NewUser>(this.host, {{nick: newUser.nick, password: newUser.password, headers});
     // }

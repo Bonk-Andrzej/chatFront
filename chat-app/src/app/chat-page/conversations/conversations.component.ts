@@ -1,14 +1,14 @@
 import {Component, Input, OnInit} from '@angular/core';
 
-import {MessageDTO} from '../../services/message-repostiory/messageDTO';
-import {MessagesRepositoryService} from '../../services/message-repostiory/message-repository.service';
-import {MessageSEND} from '../../services/message-repostiory/messageSEND';
+import {MessageDTO} from '../../repository/message-repostiory/messageDTO';
+import {MessagesRepositoryService} from '../../repository/message-repostiory/message-repository.service';
+import {MessageSEND} from '../../repository/message-repostiory/messageSEND';
 import {AuthorizationServiceService} from '../../services/authorization-service/authorization-service.service';
 import {Router} from '@angular/router';
 
 import {ActiveUserListComponent} from '../active-user-list/active-user-list.component';
 import {MessageServiceService} from '../../services/messege-service/message-service.service';
-import {UserDTO} from '../../services/user-repository/user-d-t.o';
+import {UserDTO} from '../../repository/user-repository/user-d-t.o';
 
 
 @Component({
@@ -18,39 +18,68 @@ import {UserDTO} from '../../services/user-repository/user-d-t.o';
 })
 export class ConversationsComponent implements OnInit {
 
-    public listMessages: Array<MessageDTO>;
     public messageReceiver = 'MESSAGE RECEIVER';
-    public authorizedUser: UserDTO;
-    private receiver: UserDTO;
-    private sender: UserDTO;
+    public messageSender = 'MESSAGE SENDER';
+    public timeSender = '22:00';
+    public timeReceiver = '23:00';
+    public conversation: Array<MessageDTO>;
+
+
+    public sender: UserDTO;
+    public messagesListReceiver: Array<MessageDTO>;
+    public displayLayou = false;
+    public startBoundMessages: number;
+    public toBoundMessages: number;
+    public conversationStatusBar = {
+        'backgroundColor': '#df1b37'
+    };
 
 
     constructor(private messagesRepository: MessagesRepositoryService,
                 private authorizationService: AuthorizationServiceService,
                 private messageService: MessageServiceService,
                 private router: Router) {
-        this.listMessages = [];
+        this.conversation = [];
+        this.messagesListReceiver = [];
     }
 
     ngOnInit() {
         if (!this.authorizationService.isAuthorizated()) {
             this.router.navigateByUrl('/login');
         } else {
-            this.authorizedUser = this.authorizationService.getAuthorizatedUser();
-            console.log(this.authorizedUser);
-            this.sender = this.authorizedUser;
+            this.messageService.onSetReceiver(() => {
+                this.getConversation(100, 0);
+                this.displayLayou = true;
+                this.conversationStatusBar.backgroundColor = '#56c130';
+            });
+
+            this.sender = this.authorizationService.getAuthorizatedUser();
+            this.messageService.setSender(this.sender);
+            console.log(this.sender);
+
+
         }
     }
 
     public sendMessage() {
         const content: HTMLInputElement = document.querySelector('#conversation-text-input');
 
-        let contentValue = content.value;
+        const contentValue = content.value;
         this.messageService.sendMessage2(contentValue);
 
         content.value = '';
+    }
 
+    public getConversation(limit: number, startBound: number) {
+        this.messageService.getConversation(limit, startBound).subscribe((messages) => {
+            console.log(messages, 'received');
+            this.conversation = messages;
+            console.log(this.conversation);
+        });
 
     }
+
+
+
 }
 

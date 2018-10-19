@@ -11,7 +11,7 @@
     margin: 0;
     grid-column: 1/3;
     grid-row: 1/2;
-    background-color: $color-green;
+    background-color: $color-red;
 
   }
   #conversation-header {
@@ -63,6 +63,7 @@
       padding: 15px;
       grid-column: 1/1;
       grid-row: 1/18;
+      overflow: auto;
 
 
 

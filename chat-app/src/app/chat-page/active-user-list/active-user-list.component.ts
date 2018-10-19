@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 
-import {UserRepositoryService} from '../../services/user-repository/user-repository.service';
+import {UserRepositoryService} from '../../repository/user-repository/user-repository.service';
 import {AuthorizationServiceService} from '../../services/authorization-service/authorization-service.service';
 import {MessageServiceService} from '../../services/messege-service/message-service.service';
-import {UserDTO} from '../../services/user-repository/user-d-t.o';
+import {UserDTO} from '../../repository/user-repository/user-d-t.o';
 
 @Component({
     selector: 'app-active-user-list',
@@ -27,16 +27,15 @@ export class ActiveUserListComponent implements OnInit {
     ngOnInit() {
 
         this.userRepository.getUsers().subscribe(users => {
+            console.log(users);
             for (const user of users) {
-                this.users.push(new UserDTO(user.id, user.nick));
+                this.users.push(new UserDTO(user.idUser, user.nick));
             }
         });
     }
 
-    sendUserToConversationService(user: UserDTO) {
+    setReceiver(user: UserDTO) {
         this.messageService.setReceiver(user);
-        console.log(this.messageService.getSender().id);
-        console.log(this.messageService.getReceiver().id);
         this.activeUserStatusBar.backgroundColor = '#56c130';
     }
 

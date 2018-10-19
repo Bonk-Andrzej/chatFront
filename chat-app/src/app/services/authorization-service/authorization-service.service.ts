@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 
-import {UserRepositoryService} from '../user-repository/user-repository.service';
+import {UserRepositoryService} from '../../repository/user-repository/user-repository.service';
 import {MessageServiceService} from '../messege-service/message-service.service';
-import {UserDTO} from '../user-repository/user-d-t.o';
+import {UserDTO} from '../../repository/user-repository/user-d-t.o';
 
 @Injectable({
     providedIn: 'root'
@@ -14,8 +14,7 @@ export class AuthorizationServiceService {
     private success: () => void;
     private failded: () => void;
 
-    constructor(private userRepository: UserRepositoryService,
-                private messageService: MessageServiceService) {
+    constructor(private userRepository: UserRepositoryService) {
 
     }
 
@@ -23,7 +22,6 @@ export class AuthorizationServiceService {
         this.userRepository.getUserByNickPass(nick, password).subscribe((user: UserDTO) => {
             this.authorizedUser = user;
             if (this.success) {
-                this.messageService.setSender(user)
                 this.success();
             }
         }, () => {
