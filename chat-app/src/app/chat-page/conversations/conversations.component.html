@@ -2,7 +2,7 @@
     <div [ngStyle]="conversationStatusBar" id="conversation-bar"></div>
     <div id="conversation-header">
         <p id="conversation-brand-chat">Chat</p>
-        <p id="conversation-interlocutors">Igor : Jastrzab</p>
+        <p id="conversation-interlocutors">{{sender.nick}} : {{receiver.nick}}</p>
         <p id="conversation-filter"> X</p>
     </div>
 
@@ -14,10 +14,11 @@
 
                 <ng-template #senderT>
                     <div class="message-box-message-sender-wrapper">
-                        <p id="message-box-message-sender-timer">{{message.sendDate}}</p>
+                        <div id="message-box-message-sender-timer">{{message.sendDate}}</div>
                         <div class="message-box-message-sender">{{message.content+ " send"}}-{{message.idSender}}-{{sender.idUser}}</div>
                     </div>
                 </ng-template>
+
 
                 <ng-template #recieverT>
                     <div class="message-box-message-receiver-wrapper">

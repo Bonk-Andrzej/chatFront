@@ -26,6 +26,7 @@ export class ConversationsComponent implements OnInit {
 
 
     public sender: UserDTO;
+    public receiver: UserDTO;
     public messagesListReceiver: Array<MessageDTO>;
     public displayLayou = false;
     public startBoundMessages: number;
@@ -76,10 +77,9 @@ export class ConversationsComponent implements OnInit {
             this.conversation = messages;
             console.log(this.conversation);
         });
+        this.receiver = this.messageService.getReceiver();
 
     }
-
-
 
 }
 

@@ -18,7 +18,7 @@
     margin: 0;
     grid-column: 1/3;
     grid-row: 2/2;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(11, 1fr);
     grid-template-rows: repeat(1, 1fr);
     display: grid;
 
@@ -33,7 +33,7 @@
     }
     #conversation-interlocutors {
       margin: 0;
-      grid-column: 5/7;
+      grid-column: 6/6;
       grid-row: 1/1;
       font-size: 21px;
       color: $color-white;
@@ -43,7 +43,7 @@
 
       margin: 0;
       padding-left: 20px;
-      grid-column: 10/10;
+      grid-column: 11/11;
       grid-row: 1/1;
       width: 100%;
       height: 100%;
@@ -89,7 +89,7 @@
           margin: 0;
           padding: 0;
           color: $color-white;
-        }
+                  }
         .message-box-message-sender {
           width: 100%;
           height: 100%;
@@ -130,6 +130,7 @@
         }
       }
     }
+
     .conversation-input {
 
       margin: 23px;
@@ -147,6 +148,9 @@
         //border-bottom-left-radius: $box-radius;
         //border-top-left-radius: $box-radius;
 
+      }
+      #conversation-button-send:hover {
+        cursor: pointer;
       }
       #conversation-button-send {
         margin: 0;
