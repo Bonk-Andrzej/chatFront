@@ -52,12 +52,21 @@
 
     }
   }
+
   #conversation-box {
     grid-column: 1/3;
     grid-row: 3/21;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(20, 1fr);
+
+    #conversation-list::-webkit-scrollbar {
+      background-color: $color-black;
+    }
+    #conversation-list::-webkit-scrollbar-thumb {
+      background-color: $color-green;
+    }
+
     #conversation-list {
       margin: 0;
       padding: 15px;
@@ -65,17 +74,14 @@
       grid-row: 1/18;
       overflow: auto;
 
-
-
-
-      .message-box-message-sender-wrapper{
+      .message-box-message-sender-wrapper {
         width: 100%;
         height: 23%;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(10, 1fr);
         display: grid;
 
-        #message-box-message-sender-timer{
+        #message-box-message-sender-timer {
           width: 100%;
           height: 100%;
           grid-column: 2/2;
@@ -84,7 +90,7 @@
           padding: 0;
           color: $color-white;
         }
-        .message-box-message-sender{
+        .message-box-message-sender {
           width: 100%;
           height: 100%;
           grid-column: 2/2;
@@ -96,15 +102,14 @@
         }
       }
 
-
-      .message-box-message-receiver-wrapper{
+      .message-box-message-receiver-wrapper {
         width: 100%;
         height: 23%;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(10, 1fr);
         display: grid;
 
-        #message-box-message-receiver-timer{
+        #message-box-message-receiver-timer {
           width: 100%;
           height: 100%;
           grid-column: 1/1;
@@ -114,8 +119,7 @@
           color: $color-white;
         }
 
-
-        .message-box-message-receiver{
+        .message-box-message-receiver {
           width: 100%;
           height: 100%;
           grid-column: 1/1;
@@ -134,7 +138,7 @@
       display: inline-block;
       position: relative;
 
-      #conversation-text-input{
+      #conversation-text-input {
         margin: 0;
         border: 0;
         width: 100%;
@@ -156,8 +160,8 @@
         outline: none;
         background: url("./../../../assets/arrow_black.png") no-repeat center;
         background-size: 25px;
-  position: absolute;
-     }
+        position: absolute;
+      }
     }
   }
 }

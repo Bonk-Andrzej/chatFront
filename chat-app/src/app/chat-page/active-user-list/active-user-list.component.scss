@@ -1,11 +1,19 @@
 @import "~src/style-primary";
 
+#active-user-wrapper::-webkit-scrollbar {
+  background-color: $color-black;
+}
+
+#active-user-wrapper::-webkit-scrollbar-thumb {
+  background-color: var(--some-color);
+}
 #active-user-wrapper {
   width: 100%;
   height: 100%;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(20, 1fr);
   display: grid;
+  overflow: auto;
 
   #active-user-bar {
     grid-column: 1/3;
