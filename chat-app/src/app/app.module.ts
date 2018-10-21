@@ -10,6 +10,7 @@ import {ConversationsComponent} from './chat-page/conversations/conversations.co
 import {ActiveUserListComponent} from './chat-page/active-user-list/active-user-list.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { CssValidatorComponent } from './css-validator/css-validator.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import {HttpClientModule} from '@angular/common/http';
         HeaderComponent,
         ConversationsComponent,
         ActiveUserListComponent,
+        CssValidatorComponent,
 
     ],
     imports: [
