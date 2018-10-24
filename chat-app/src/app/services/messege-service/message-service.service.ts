@@ -4,7 +4,7 @@ import {MessagesRepositoryService} from '../../repository/message-repostiory/mes
 import {UserDTO} from '../../repository/user-repository/user-d-t.o';
 import {MessageDTO} from '../../repository/message-repostiory/messageDTO';
 import {MessageSEND} from '../../repository/message-repostiory/messageSEND';
-import {Observable, observable} from 'rxjs';
+import {Observable} from 'rxjs';
 
 @Injectable({
     providedIn: 'root'
@@ -48,6 +48,7 @@ export class MessageServiceService {
     public sendMessage2(content: string) {
         if (this.receiver) {
             console.log(this.receiver);
+
             const messageSEND = new MessageSEND(content, this.sender.idUser, this.receiver.idUser);
 
             this.messageRepository.postMessages(messageSEND).subscribe(message => {

@@ -1,11 +1,11 @@
-import {Component, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {NewUser} from '../repository/user-repository/newUser';
 import {UserRepositoryService} from '../repository/user-repository/user-repository.service';
 import {AuthorizationServiceService} from '../services/authorization-service/authorization-service.service';
-import {p} from '@angular/core/src/render3';
 
 import {Router} from '@angular/router';
+import {WSRClientService} from "../services/WSRClient/wsrclient.service";
 
 @Component({
     selector: 'app-login-page',
@@ -24,10 +24,15 @@ export class LoginPageComponent implements OnInit {
     constructor(private http: HttpClient,
                 private userRepository: UserRepositoryService,
                 private authorizationService: AuthorizationServiceService,
-                private router: Router) {
+                private router: Router,
+                private wsr: WSRClientService){
+
+        console.log(wsr,"In componnet")
     }
 
+
     ngOnInit() {
+        console.log(this.wsr,"In componnet Init")
     }
 
     public addUser() {
