@@ -1,6 +1,7 @@
 import {WebSocketHandler} from "../application/services/WebSocketHandler";
 import {ProcedureRepository} from "../domain/ports/ProcedureRepository";
 import {ProcedureDTO} from "../domain/model/ProcedureDTO";
+import {EventEmitter} from "@angular/core";
 
 export class WSRClient<LT, RT> {
 
@@ -26,6 +27,10 @@ export class WSRClient<LT, RT> {
         procedureDTO.setType(procedureType)
 
         this.webSocketHandler.sendData(procedureDTO);
+    }
+
+    onOpen(): EventEmitter<Event>{
+        return this.webSocketHandler.onOpen();
     }
 
 

@@ -21,18 +21,13 @@ export class LoginPageComponent implements OnInit {
     };
 
 
+    ngOnInit(){}
+
     constructor(private http: HttpClient,
                 private userRepository: UserRepositoryService,
                 private authorizationService: AuthorizationServiceService,
                 private router: Router,
                 private wsr: WSRClientService){
-
-        console.log(wsr,"In componnet")
-    }
-
-
-    ngOnInit() {
-        console.log(this.wsr,"In componnet Init")
     }
 
     public addUser() {

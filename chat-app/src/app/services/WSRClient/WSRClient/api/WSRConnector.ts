@@ -7,12 +7,9 @@ export class WSRConnector<LT,RT> {
 
     public connect(url: string):WSRClient<LT,RT>{
 
-        console.log(ProcedureRepositoryImp)
-        console.log("OK")
         let procedureRepositoryImp: ProcedureRepository<LT> = new ProcedureRepositoryImp();
         let webSocketHandler = new WebSocketHandler(url,procedureRepositoryImp);
-
-        console.log((WSRClient))
+        
         return WSRClient.configure(webSocketHandler,procedureRepositoryImp);
 
     }

@@ -11,10 +11,6 @@ export class WSRClientService {
 
     let wsrConnector = new WSRConnector<string,string>();
 
-    console.log(wsrConnector)
-
-    console.log("WSRClient Start")
-
     let WSRClient = wsrConnector.connect("ws://localhost:8080/socket");
 
 
@@ -23,10 +19,11 @@ export class WSRClientService {
       console.log("Test procedure")
     });
 
-    setTimeout(()=>{
-      console.log(("send"))
+
+    WSRClient.onOpen().subscribe(()=>{
         WSRClient.executeRemoteProcedure("RMTEST","Message")
-    },1000)
+    })
+
 
 
 
