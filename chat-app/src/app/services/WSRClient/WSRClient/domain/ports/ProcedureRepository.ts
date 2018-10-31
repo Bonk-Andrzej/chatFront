@@ -1,9 +1,11 @@
+import {Procedure} from "../model/Procedure";
+
 export interface ProcedureRepository<LT> {
 
-    addProcedure(procedureType: LT, procedure: (data:any) => void): void;
+    addProcedure(procedure: Procedure<LT,any>);
 
     removeProcedure(procedureType: LT): void;
 
-    getProcedure(procedureType: LT): (data:any) => void;
+    getProcedure(procedureType: LT): Procedure<LT,any>;
 
 }

@@ -1,5 +1,9 @@
 import { Injectable } from '@angular/core';
 import {WSRConnector} from "./WSRClient/api/WSRConnector";
+import {WSRClient} from "./WSRClient/api/WSRClient";
+import {ErrorDTO} from "./dto/ErrorDTO";
+import {LocalType} from "./types/LocalType";
+import {RemoteType} from "./types/RemoteType";
 
 
 @Injectable({
@@ -7,25 +11,22 @@ import {WSRConnector} from "./WSRClient/api/WSRConnector";
 })
 export class WSRClientService {
 
+  private wsrClient: WSRClient<LocalType,RemoteType>;
+
   constructor() {
 
-    let wsrConnector = new WSRConnector<string,string>();
-
-    let WSRClient = wsrConnector.connect("ws://localhost:8080/socket");
-
-
-    WSRClient.addProcedure("TEST","",data => {
-
-      console.log("Test procedure")
-    });
+    let wsrConnector = new WSRConnector<LocalType,RemoteType>();
+    this.wsrClient = wsrConnector.connect("ws://localhost:8080/socket");
 
 
-    WSRClient.onOpen().subscribe(()=>{
-        WSRClient.executeRemoteProcedure("RMTEST","Message")
+    this.wsrClient.addProcedure(LocalType.ERROR,new ErrorDTO(),data => {
+        console.error(data,"Error");
     })
 
 
+  }
 
-
+  public get WRSClient(): WSRClient<LocalType,RemoteType>{
+    return this.wsrClient;
   }
 }

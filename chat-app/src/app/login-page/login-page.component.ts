@@ -6,6 +6,8 @@ import {AuthorizationServiceService} from '../services/authorization-service/aut
 
 import {Router} from '@angular/router';
 import {WSRClientService} from "../services/WSRClient/wsrclient.service";
+import {AuthSessionDTO} from "../services/WSRClient/dto/AuthSessionDTO";
+import {RemoteType} from "../services/WSRClient/types/RemoteType";
 
 @Component({
     selector: 'app-login-page',
@@ -21,35 +23,16 @@ export class LoginPageComponent implements OnInit {
     };
 
 
-    ngOnInit(){}
+    ngOnInit() {
+    }
 
     constructor(private http: HttpClient,
                 private userRepository: UserRepositoryService,
                 private authorizationService: AuthorizationServiceService,
                 private router: Router,
-                private wsr: WSRClientService){
+                private wsr: WSRClientService) {
     }
 
-    public addUser() {
-        const login: HTMLInputElement = document.querySelector('#login');
-        const pass: HTMLInputElement = document.querySelector('#password');
-
-        console.log(login.value);
-        console.log(pass.value);
-        const o = {nick: login.value, password: pass.value};
-
-        console.log(JSON.stringify(o));
-
-        const headers = new HttpHeaders();
-        headers.set('Content-Type', 'application/json');
-        headers.set('Access-Control-Allow-Origin', '*');
-        headers.set('Access-Control-Allow-Origin', 'true');
-        const objectObservable = this.http.post('http://localhost:8080/users', {nick: login.value, password: pass.value, headers});
-
-        objectObservable.subscribe((e) => {
-        }, (e) => {
-        });
-    }
 
     public registerUser() {
         const login: HTMLInputElement = document.querySelector('#login');
@@ -73,6 +56,14 @@ export class LoginPageComponent implements OnInit {
 
         this.authorizationService.onAuthorizated(() => {
             this.router.navigateByUrl('/chat');
+
+
+            const authSessionDTO = new AuthSessionDTO();
+
+                authSessionDTO.setUserId(this.authorizationService.getAuthorizatedUser().idUser)
+                this.wsr.WRSClient.executeRemoteProcedure(RemoteType.AUTHSESSION, authSessionDTO);
+
+
         });
         this.authorizationService.onFaild(() => {
                 this.statusBar.backgroundColor = '#df1b37';

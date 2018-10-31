@@ -45,7 +45,7 @@ export class MessageServiceService {
     }
 
 
-    public sendMessage2(content: string) {
+    public sendMessage(content: string) {
         if (this.receiver) {
             console.log(this.receiver);
 

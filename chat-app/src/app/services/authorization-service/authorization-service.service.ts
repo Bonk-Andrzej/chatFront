@@ -45,8 +45,4 @@ export class AuthorizationServiceService {
         this.failded = observer;
     }
 
-    public getAuthorizedUser(): UserDTO {
-        return this.authorizedUser;
-    }
-
 }

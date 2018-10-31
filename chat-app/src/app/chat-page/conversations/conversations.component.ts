@@ -1,12 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 import {MessageDTO} from '../../repository/message-repostiory/messageDTO';
 import {MessagesRepositoryService} from '../../repository/message-repostiory/message-repository.service';
-import {MessageSEND} from '../../repository/message-repostiory/messageSEND';
 import {AuthorizationServiceService} from '../../services/authorization-service/authorization-service.service';
 import {Router} from '@angular/router';
-
-import {ActiveUserListComponent} from '../active-user-list/active-user-list.component';
 import {MessageServiceService} from '../../services/messege-service/message-service.service';
 import {UserDTO} from '../../repository/user-repository/user-d-t.o';
 
@@ -66,7 +63,7 @@ export class ConversationsComponent implements OnInit {
         const content: HTMLInputElement = document.querySelector('#conversation-text-input');
 
         const contentValue = content.value;
-        this.messageService.sendMessage2(contentValue);
+        this.messageService.sendMessage(contentValue);
 
         content.value = '';
     }
