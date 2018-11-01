@@ -1,25 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b60603bf-ca27-4cf4-a1d8-67333e335b29" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/Json.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/JsonParser.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/model/Procedure.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/dto/AuthSessionDTO.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/dto/ErrorDTO.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/types/LocalType.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/types/RemoteType.ts" afterDir="false" />
+    <list default="true" id="6b6a9277-8b3f-430e-9dd7-75156a3c8341" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-app/src/app/chat-page/conversations/conversations.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/chat-app/src/app/chat-page/conversations/conversations.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat-app/src/app/chat-page/conversations/conversations.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chat-app/src/app/chat-page/conversations/conversations.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat-app/src/app/login-page/login-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chat-app/src/app/login-page/login-page.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/api/WSRClient.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/api/WSRClient.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/ProcedureJsonParser.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/api/WSRConnector.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/api/WSRConnector.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/Json.js" beforeDir="false" afterPath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/dto/MessageDTO.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/JsonParser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/JsonParser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/WebSocketHandler.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/WebSocketHandler.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/ports/ProcedureRepository.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/ports/ProcedureRepository.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/infrastructure/ProcedureRepositoryImp.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/infrastructure/ProcedureRepositoryImp.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/types/RemoteType.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/types/RemoteType.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/wsrclient.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/wsrclient.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chat-app/src/app/services/authorization-service/authorization-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chat-app/src/app/services/authorization-service/authorization-service.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chat-app/src/app/services/messege-service/message-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/chat-app/src/app/services/messege-service/message-service.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,102 +23,57 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FUSProjectUsageTrigger">
-    <session id="-287432855">
+    <session id="-1976572936">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.22" value="1" />
+          <entry key="project.open.time.48" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="ProcedureDTO" value="1" />
-          <entry key="ProcedureRepositoryInMemory" value="1" />
-          <entry key="css" value="1" />
-          <entry key="html" value="2" />
-          <entry key="ico" value="1" />
-          <entry key="js" value="3" />
-          <entry key="png" value="1" />
-          <entry key="ts" value="17" />
-          <entry key="txt" value="2" />
+          <entry key="css" value="2" />
+          <entry key="html" value="8" />
+          <entry key="js" value="2" />
+          <entry key="scss" value="5" />
+          <entry key="ts" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="1" />
-          <entry key="HTML" value="2" />
-          <entry key="Image" value="2" />
-          <entry key="JavaScript" value="3" />
-          <entry key="PLAIN_TEXT" value="4" />
-          <entry key="TypeScript" value="15" />
-          <entry key="TypeScript JSX" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts">
-        <counts>
-          <entry key="Angular2LanguageService" value="1" />
+          <entry key="CSS" value="2" />
+          <entry key="HTML" value="8" />
+          <entry key="JavaScript" value="2" />
+          <entry key="SCSS" value="5" />
+          <entry key="TypeScript" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="ProcedureRepositoryInMemory" value="2" />
-          <entry key="ts" value="2668" />
+          <entry key="css" value="130" />
+          <entry key="html" value="119" />
+          <entry key="js" value="1" />
+          <entry key="scss" value="641" />
+          <entry key="ts" value="1948" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="11" />
-          <entry key="TypeScript" value="2657" />
-          <entry key="TypeScript JSX" value="2" />
-        </counts>
-      </usages-collector>
-    </session>
-    <session id="1412301765">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.4" value="1" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="CSS" value="130" />
+          <entry key="HTML" value="119" />
+          <entry key="JavaScript" value="1" />
+          <entry key="SCSS" value="641" />
+          <entry key="TypeScript" value="1948" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
           <entry key="Angular2LanguageService" value="3" />
-          <entry key="TypeScriptServerServiceImpl" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="html" value="1" />
-          <entry key="js" value="1" />
-          <entry key="ts" value="1878" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="1" />
-          <entry key="PLAIN_TEXT" value="19" />
-          <entry key="TypeScript" value="1859" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="html" value="1" />
-          <entry key="js" value="1" />
-          <entry key="scss" value="1" />
-          <entry key="ts" value="46" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="HTML" value="1" />
-          <entry key="JavaScript" value="1" />
-          <entry key="PLAIN_TEXT" value="3" />
-          <entry key="SCSS" value="1" />
-          <entry key="TypeScript" value="43" />
         </counts>
       </usages-collector>
     </session>
@@ -132,36 +81,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chat-app/src/app/login-page/login-page.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
-              <folding>
-                <element signature="e#0#48#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/dto/AuthSessionDTO.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/Json.js">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/WebSocketHandler.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="419">
-              <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+            <state relative-caret-position="440">
+              <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
               <folding>
                 <element signature="e#0#75#0" expanded="true" />
               </folding>
@@ -169,13 +92,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/JsonParser.ts">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/api/WSRConnector.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="108" column="1" lean-forward="true" selection-start-line="108" selection-start-column="1" selection-end-line="108" selection-end-column="1" />
+            <state relative-caret-position="85">
+              <caret line="5" column="61" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
               <folding>
-                <element signature="e#98#115#0" />
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/wsrclient.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -184,8 +119,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/api/WSRClient.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+            <state relative-caret-position="170">
+              <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
               <folding>
                 <element signature="e#0#74#0" expanded="true" />
               </folding>
@@ -194,22 +129,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/authorization-service/authorization-service.service.ts">
+        <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/types/RemoteType.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-              <folding>
-                <element signature="n#!!block;n#authenticate#0;n#AuthorizationServiceService#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/ports/ProcedureRepository.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="54" />
+            <state relative-caret-position="34">
+              <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -217,8 +140,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chat-app/src/app/chat-page/conversations/conversations.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="40" column="39" lean-forward="true" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+            <state relative-caret-position="98">
+              <caret line="67" column="27" lean-forward="true" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -226,23 +149,50 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/messege-service/message-service.service.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="66" column="28" lean-forward="true" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chat-app/src/app/chat-page/conversations/conversations.component.scss">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/dto/MessageDTO.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="7" selection-start-column="7" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chat-app/src/app/repository/message-repostiory/messageDTO.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="129">
+              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/model/Procedure.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="13" selection-start-column="13" selection-end-column="13" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="TypeScript File" />
-      </list>
-    </option>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>setDataObject</find>
+      <find>LT</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -251,30 +201,26 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/infrastructure/ProcedureRepositoryInMemory" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/infrastructure/ProcedureRepositoryInMemory.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/model/ProcedureDTO.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/api/WSRConnector.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/ProcedureParser.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/ProcedureJsonParse.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/messege-service/message-service.service.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/dto/AuthSessionDTO.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/dto/ErrorDTO.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/ProcedureJsonParser.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/authorization-service/authorization-service.service.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/wsrclient.service.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/ports/ProcedureRepository.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/infrastructure/ProcedureRepositoryImp.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/model/Procedure.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/types/LocalType.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/types/RemoteType.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/chat-page/conversations/conversations.component.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/chat-page/conversations/conversations.component.html" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/WebSocketHandler.ts" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/Json.js" />
-        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/api/WSRClient.ts" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/app.component.css" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/css-validator/css-validator.component.css" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/css-validator/css-validator.component.html" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/chat-page/active-user-list/active-user-list.component.html" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/app-routing.module.ts" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/chat-page/active-user-list/active-user-list.component.scss" />
         <option value="$PROJECT_DIR$/chat-app/src/app/login-page/login-page.component.ts" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/model/ProcedureDTO.ts" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/model/NewProcedureDTO.ts" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/infrastructure/ProcedureRepositoryImp.ts" />
         <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/JsonParser.ts" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/ports/ProcedureRepository.ts" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/WebSocketHandler.ts" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/api/WSRConnector.ts" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/wsrclient.service.ts" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/api/WSRClient.ts" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/dto/MessageDTO.ts" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/chat-page/conversations/conversations.component.ts" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/services/WSRClient/types/RemoteType.ts" />
+        <option value="$PROJECT_DIR$/chat-app/src/app/services/messege-service/message-service.service.ts" />
       </list>
     </option>
   </component>
@@ -293,17 +239,19 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="183" />
-    <option name="y" value="-15" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
+    <option name="x" value="-268" />
+    <option name="y" value="-17" />
+    <option name="width" value="1346" />
+    <option name="height" value="788" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <autoscrollToSource ProjectPane="true" />
       <autoscrollFromSource ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -352,15 +300,6 @@
               <item name="chat-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="chat-page" type="462c0819:PsiDirectoryNode" />
-              <item name="header" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chatFront" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chatFront" type="462c0819:PsiDirectoryNode" />
-              <item name="chat-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="login-page" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -369,7 +308,16 @@
               <item name="chat-app" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="chatFront" type="b2602c69:ProjectViewProjectNode" />
+              <item name="chatFront" type="462c0819:PsiDirectoryNode" />
+              <item name="chat-app" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+              <item name="message-repostiory" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="chatFront" type="b2602c69:ProjectViewProjectNode" />
@@ -378,7 +326,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="authorization-service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="chatFront" type="b2602c69:ProjectViewProjectNode" />
@@ -428,108 +375,20 @@
               <item name="WSRClient" type="462c0819:PsiDirectoryNode" />
               <item name="WSRClient" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="chatFront" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chatFront" type="462c0819:PsiDirectoryNode" />
-              <item name="chat-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="WSRClient" type="462c0819:PsiDirectoryNode" />
-              <item name="WSRClient" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chatFront" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chatFront" type="462c0819:PsiDirectoryNode" />
-              <item name="chat-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="WSRClient" type="462c0819:PsiDirectoryNode" />
-              <item name="WSRClient" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chatFront" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chatFront" type="462c0819:PsiDirectoryNode" />
-              <item name="chat-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="WSRClient" type="462c0819:PsiDirectoryNode" />
-              <item name="WSRClient" type="462c0819:PsiDirectoryNode" />
-              <item name="application" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chatFront" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chatFront" type="462c0819:PsiDirectoryNode" />
-              <item name="chat-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="WSRClient" type="462c0819:PsiDirectoryNode" />
-              <item name="WSRClient" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chatFront" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chatFront" type="462c0819:PsiDirectoryNode" />
-              <item name="chat-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="WSRClient" type="462c0819:PsiDirectoryNode" />
-              <item name="WSRClient" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chatFront" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chatFront" type="462c0819:PsiDirectoryNode" />
-              <item name="chat-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="WSRClient" type="462c0819:PsiDirectoryNode" />
-              <item name="WSRClient" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="ports" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="chatFront" type="b2602c69:ProjectViewProjectNode" />
-              <item name="chatFront" type="462c0819:PsiDirectoryNode" />
-              <item name="chat-app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
-              <item name="WSRClient" type="462c0819:PsiDirectoryNode" />
-              <item name="WSRClient" type="462c0819:PsiDirectoryNode" />
-              <item name="infrastructure" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../synergia-grades-manager" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="ts.external.directory.path" value="C:\Users\PawelJastrzebski\Desktop\Projects\Chat\chatFront\chat-app\node_modules\typescript\lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="ts.external.directory.path" value="C:\Users\Paweł\Desktop\Git\chatFront\chat-app\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\PawelJastrzebski\Desktop\Projects\Chat\chatFront\chat-app\src\app\services\WSRClient" />
-      <recent name="C:\Users\PawelJastrzebski\Desktop\Chat\front-end\App\chatFront\chat-app\src\app\services\WSRClient\WSRClient" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\PawelJastrzebski\Desktop\Projects\Chat\chatFront\chat-app\src\app\services\WSRClient\types" />
-      <recent name="C:\Users\PawelJastrzebski\Desktop\Chat\front-end\App\chatFront\chat-app\src\app\services\WSRClient\WSRClient\infrastructure" />
+      <recent name="C:\Users\Paweł\Desktop\Git\chatFront\chat-app\src\app\services\WSRClient\WSRClient\domain\model" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -549,25 +408,27 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="b60603bf-ca27-4cf4-a1d8-67333e335b29" name="Default Changelist" comment="" />
-      <created>1540402214033</created>
+      <changelist id="6b6a9277-8b3f-430e-9dd7-75156a3c8341" name="Default Changelist" comment="" />
+      <created>1539453601687</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1540402214033</updated>
-      <workItem from="1540402217175" duration="16258000" />
-      <workItem from="1540705431395" duration="1744000" />
-      <workItem from="1540707221945" duration="3275000" />
-      <workItem from="1540748096808" duration="8709000" />
+      <updated>1539453601687</updated>
+      <workItem from="1539453605215" duration="295000" />
+      <workItem from="1540027152320" duration="2176000" />
+      <workItem from="1540105791256" duration="13162000" />
+      <workItem from="1541008618686" duration="8871000" />
+      <workItem from="1541087782828" duration="6294000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29986000" />
+    <option name="totallyTimeSpent" value="30798000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2591687" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25642964" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -578,239 +439,268 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TypeScript" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.39461884" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="right" x="0" y="0" width="374" height="826" id="Documentation" side_tool="true" weight="0.3294621" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33179724" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25305623" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="TypeScript" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.41591927" />
-      <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="*.ts" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/wsrclient.service.spec.ts" />
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/wsrclient.service.ts" />
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/wsrclient.service.spec.ts" />
+    <entry file="file://$USER_HOME$/AppData/Roaming/npm/node_modules/@angular/cli/models/workspace-loader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" column="9" lean-forward="true" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/chat-page/header/header.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/css-validator/css-validator.component.spec.ts" />
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/chat-page/active-user-list/active-user-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/chat-page/chat-page.component.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/style-primary.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/chat-app/src/app/app.component.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/css-validator/css-validator.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/app.component.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/chat-app/src/app/app-routing.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="31" selection-start-line="22" selection-start-column="31" selection-end-line="22" selection-end-column="31" />
+        <state relative-caret-position="102">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/repository/message-repostiory/messageSEND.ts">
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/chat-page/chat-page.component.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="526">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        <state relative-caret-position="68">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chat-app/dist/chat-app/Logo.a5502b29596b05f85b1c.png" />
-    <entry file="file://$PROJECT_DIR$/chat-app/dist/chat-app/index.html" />
-    <entry file="file://$PROJECT_DIR$/chat-app/dist/chat-app/runtime.ec2944dd8b20ec099bf3.js" />
-    <entry file="file://$PROJECT_DIR$/chat-app/dist/chat-app/polyfills.f6ae3e8b63939c618130.js" />
-    <entry file="file://$PROJECT_DIR$/chat-app/dist/chat-app/main.6f6ae7c8dfaf486153d2.js" />
-    <entry file="file://$PROJECT_DIR$/chat-app/dist/chat-app/logo.ico" />
-    <entry file="file://$PROJECT_DIR$/chat-app/dist/chat-app/3rdpartylicenses.txt" />
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/infrastructure/ProcedureRepositoryInMemory" />
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/app.component.html">
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/css-validator/css-validator.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/css-validator/css-validator.component.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/model/ProcedureDTO.ts">
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/app.module.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="30" selection-start-column="30" selection-end-column="30" />
+        <state relative-caret-position="17">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/api/WSRConnector.ts">
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/chat-page/active-user-list/active-user-list.component.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/chat-page/active-user-list/active-user-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="25" selection-start-line="4" selection-start-column="25" selection-end-line="4" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/chat-page/chat-page.component.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/Json.js" />
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/chat-page/conversations/conversations.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/login-page/login-page.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/dto/ErrorDTO.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/messege-service/message-service.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/wsrclient.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/infrastructure/ProcedureRepositoryImp.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="41" lean-forward="true" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+        <state relative-caret-position="34">
+          <caret line="3" column="53" selection-start-line="3" selection-start-column="53" selection-end-line="3" selection-end-column="53" />
           <folding>
             <element signature="e#0#72#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/model/Procedure.ts">
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/JsonParser.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        <state relative-caret-position="34">
+          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/types/LocalType.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="1" lean-forward="true" selection-start-line="3" selection-start-column="1" selection-end-line="3" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/types/RemoteType.ts">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
-          <caret line="2" column="55" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/chat-page/conversations/conversations.component.html">
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/model/ProcedureDTO.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="31" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
+        <state relative-caret-position="17">
+          <caret line="1" column="16" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/chat-page/conversations/conversations.component.scss">
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/model/NewProcedureDTO.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="29" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/dto/AuthSessionDTO.ts">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/chat-page/conversations/conversations.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="40" column="39" lean-forward="true" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/authorization-service/authorization-service.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!block;n#authenticate#0;n#AuthorizationServiceService#0" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/ports/ProcedureRepository.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="46" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="54" />
+        <state relative-caret-position="34">
+          <caret line="2" column="54" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/WebSocketHandler.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="419">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
+        <state relative-caret-position="440">
+          <caret line="61" column="33" selection-start-line="61" selection-start-column="33" selection-end-line="61" selection-end-column="33" />
           <folding>
             <element signature="e#0#75#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/Json.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/dto/AuthSessionDTO.ts">
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/api/WSRConnector.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        <state relative-caret-position="85">
+          <caret line="5" column="61" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/wsrclient.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/domain/model/Procedure.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="13" selection-start-column="13" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/api/WSRClient.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+        <state relative-caret-position="170">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#0#74#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/login-page/login-page.component.ts">
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/dto/MessageDTO.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="72" lean-forward="true" selection-start-line="72" selection-end-line="72" />
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/chat-page/conversations/conversations.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="67" column="27" lean-forward="true" selection-start-line="67" selection-start-column="27" selection-end-line="67" selection-end-column="27" />
           <folding>
             <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/WSRClient/application/services/JsonParser.ts">
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/repository/message-repostiory/messageDTO.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="108" column="1" lean-forward="true" selection-start-line="108" selection-start-column="1" selection-end-line="108" selection-end-column="1" />
+        <state relative-caret-position="129">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/WSRClient/types/RemoteType.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="34" selection-start-line="2" selection-start-column="34" selection-end-line="2" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chat-app/src/app/services/messege-service/message-service.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="66" column="28" lean-forward="true" selection-start-line="66" selection-start-column="28" selection-end-line="66" selection-end-column="28" />
           <folding>
-            <element signature="e#98#115#0" />
+            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

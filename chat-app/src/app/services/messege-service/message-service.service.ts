@@ -4,7 +4,10 @@ import {MessagesRepositoryService} from '../../repository/message-repostiory/mes
 import {UserDTO} from '../../repository/user-repository/user-d-t.o';
 import {MessageDTO} from '../../repository/message-repostiory/messageDTO';
 import {MessageSEND} from '../../repository/message-repostiory/messageSEND';
-import {Observable} from 'rxjs';
+import {WSRClientService} from "../WSRClient/wsrclient.service";
+import {LocalType} from "../WSRClient/types/LocalType";
+import {MessageDTO as MessageDTOWSR} from "../WSRClient/dto/MessageDTO";
+import {RemoteType} from "../WSRClient/types/RemoteType";
 
 @Injectable({
     providedIn: 'root'
@@ -14,8 +17,20 @@ export class MessageServiceService {
     private sender: UserDTO;
     private receiver: UserDTO;
     private onSetReceiverEvent: () => void;
+    private messages: Array<MessageDTO>;
 
-    constructor(private messageRepository: MessagesRepositoryService) {
+    constructor(private messageRepository: MessagesRepositoryService,
+                private wsr: WSRClientService) {
+
+
+        wsr.WRSClient.addProcedure(LocalType.ADDMESSAGE, new MessageDTOWSR(),data => {
+
+            const messageDTO = new MessageDTO(null,data.getContent(),"",data.getSenderId(),data.getReceiverId());
+            this.messages.push(messageDTO);
+
+        });
+
+
     }
 
 
@@ -40,8 +55,11 @@ export class MessageServiceService {
     }
 
 
-    public getConversation(limit: number, startBound: number): Observable<Array<MessageDTO>> {
-        return this.messageRepository.getConversation(this.sender, this.receiver, limit, startBound);
+    public getConversation(limit: number, startBound: number): Array<MessageDTO> {
+        this.messageRepository.getConversation(this.sender, this.receiver, limit, startBound).subscribe(value => {
+            this.messages = value;
+        });
+        return this.messages;
     }
 
 
@@ -49,11 +67,17 @@ export class MessageServiceService {
         if (this.receiver) {
             console.log(this.receiver);
 
-            const messageSEND = new MessageSEND(content, this.sender.idUser, this.receiver.idUser);
+            console.log(Date.now().toString());
+            const messageDTO = new MessageDTO(null,content,"some time ago",this.sender.idUser,this.receiver.idUser);
+            this.messages.push(messageDTO);
 
-            this.messageRepository.postMessages(messageSEND).subscribe(message => {
-                console.log(message);
-            }, error1 => console.log(error1));
+            const messageDTOWSR = new MessageDTOWSR();
+            messageDTOWSR.setContent(content);
+            messageDTOWSR.setReceiverId(this.receiver.idUser);
+            messageDTOWSR.setSenderId(this.sender.idUser);
+
+
+            this.wsr.WRSClient.executeRemoteProcedure(RemoteType.FORWARDMESSAGE, messageDTOWSR)
         }
     }
 

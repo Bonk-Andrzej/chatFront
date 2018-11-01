@@ -4,10 +4,10 @@ import {ProcedureDTO} from "../domain/model/ProcedureDTO";
 import {EventEmitter} from "@angular/core";
 import {Procedure} from "../domain/model/Procedure";
 
-export class WSRClient<LT, RT> {
+export class WSRClient<LT extends string, RT extends string> {
 
 
-    public static configure<LT, RT>(webSocketHandler: WebSocketHandler<LT,RT>,procedureRepository:ProcedureRepository<LT>): WSRClient<LT, RT> {
+    public static configure<LT extends string, RT extends string>(webSocketHandler: WebSocketHandler<LT,RT>,procedureRepository:ProcedureRepository<LT>): WSRClient<LT, RT> {
         return new WSRClient(webSocketHandler,procedureRepository);
     }
 
@@ -18,7 +18,7 @@ export class WSRClient<LT, RT> {
     }
 
     public addProcedure<D>(procedureType: LT, dataType: D, method: (data: D) => void): void {
-        const procedure: Procedure<LT,any> = new Procedure();
+        const procedure: Procedure<LT,D> = new Procedure();
         procedure.setDataObject(dataType);
         procedure.setType(procedureType);
         procedure.setMethod(method);

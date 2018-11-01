@@ -1,15 +1,21 @@
 import {ProcedureRepository} from "../domain/ports/ProcedureRepository";
 import {Procedure} from "../domain/model/Procedure";
 
-export class ProcedureRepositoryImp<LT> implements ProcedureRepository<LT> {
+export class ProcedureRepositoryImp<LT extends string> implements ProcedureRepository<LT> {
 
     private proceduresMap: Map<LT, Procedure<LT,any>>
+    private localTypeData: LT;
 
     constructor() {
         this.proceduresMap = new Map()
     }
 
+    public getLocalTypeData(){
+        return this.localTypeData;
+    }
+
     addProcedure(procedure: Procedure<LT, any>) {
+        this.localTypeData = procedure.getType();
         this.proceduresMap.set(procedure.getType(),procedure);
     }
 

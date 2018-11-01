@@ -61,7 +61,7 @@ export class LoginPageComponent implements OnInit {
             const authSessionDTO = new AuthSessionDTO();
 
                 authSessionDTO.setUserId(this.authorizationService.getAuthorizatedUser().idUser)
-                this.wsr.WRSClient.executeRemoteProcedure(RemoteType.AUTHSESSION, authSessionDTO);
+                    this.wsr.WRSClient.executeRemoteProcedure(RemoteType.AUTHSESSION, authSessionDTO);
 
 
         });

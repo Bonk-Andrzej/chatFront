@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {WSRConnector} from "./WSRClient/api/WSRConnector";
 import {WSRClient} from "./WSRClient/api/WSRClient";
 import {ErrorDTO} from "./dto/ErrorDTO";
@@ -19,7 +19,7 @@ export class WSRClientService {
     this.wsrClient = wsrConnector.connect("ws://localhost:8080/socket");
 
 
-    this.wsrClient.addProcedure(LocalType.ERROR,new ErrorDTO(),data => {
+    this.wsrClient.addProcedure(LocalType.ERROR, new ErrorDTO(),data => {
         console.error(data,"Error");
     })
 

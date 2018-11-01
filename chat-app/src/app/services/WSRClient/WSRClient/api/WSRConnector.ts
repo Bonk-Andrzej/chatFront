@@ -3,7 +3,7 @@ import {WebSocketHandler} from "../application/services/WebSocketHandler";
 import {ProcedureRepositoryImp} from "../infrastructure/ProcedureRepositoryImp";
 import {ProcedureRepository} from "../domain/ports/ProcedureRepository";
 
-export class WSRConnector<LT,RT> {
+export class WSRConnector<LT extends string,RT extends string> {
 
     public connect(url: string):WSRClient<LT,RT>{
 

@@ -69,11 +69,7 @@ export class ConversationsComponent implements OnInit {
     }
 
     public getConversation(limit: number, startBound: number) {
-        this.messageService.getConversation(limit, startBound).subscribe((messages) => {
-            console.log(messages, 'received');
-            this.conversation = messages;
-            console.log(this.conversation);
-        });
+        this.conversation = this.messageService.getConversation(limit, startBound);
         this.receiver = this.messageService.getReceiver();
 
     }
