@@ -2,7 +2,7 @@
     <div [ngStyle]="conversationStatusBar" id="conversation-bar"></div>
     <div id="conversation-header">
         <p id="conversation-brand-chat">Chat</p>
-        <p *ngIf="displayLayout" id="conversation-interlocutors">{{receiver.nick | titlecase }}</p>
+        <div *ngIf="displayLayout" id="conversation-interlocutors">{{sender.nick | titlecase }} : {{receiver.nick | titlecase }}</div>
         <p id="conversation-filter"></p>
     </div>
 
