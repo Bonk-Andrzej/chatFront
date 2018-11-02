@@ -69,10 +69,15 @@ export class ConversationsComponent implements OnInit {
         inputMessageNode.value = '';
     }
 
+    public key(event: KeyboardEvent){
+        if(event.code == "Enter"){
+            this.sendMessage(<HTMLInputElement>event.target)
+        }
+    }
+
     public getConversation(limit: number, startBound: number) {
         this.messageServiceWSR.getConversation(limit, startBound);
         this.receiver = this.messageServiceWSR.getReceiver();
-
     }
 
 }

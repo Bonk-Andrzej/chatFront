@@ -22,6 +22,8 @@
     grid-column: 1/3;
     grid-row: 1/2;
     background-color: $color-green;
+    transition: $transition-default;
+
   }
 
   #active-user-header {

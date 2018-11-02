@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {NewUser} from '../repository/user-repository/newUser';
 import {UserRepositoryService} from '../repository/user-repository/user-repository.service';
@@ -16,6 +16,9 @@ import {RemoteType} from "../services/WSRClient/types/RemoteType";
 })
 export class LoginPageComponent implements OnInit {
 
+
+    @ViewChild("status")
+    private status: ElementRef<HTMLInputElement>;
     public access = '';
     private loggedIdUser: number;
     public statusBar = {
@@ -81,6 +84,7 @@ export class LoginPageComponent implements OnInit {
         });
         this.authorizationService.onFaild(() => {
                 this.statusBar.backgroundColor = '#df1b37';
+                this.status.nativeElement.innerHTML = "incorrect login or password";
             }
         );
     }

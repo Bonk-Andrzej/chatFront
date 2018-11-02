@@ -3,7 +3,7 @@
     <div id="conversation-header">
         <p id="conversation-brand-chat">Chat</p>
         <p *ngIf="displayLayout" id="conversation-interlocutors">{{receiver.nick | titlecase }}</p>
-        <p id="conversation-filter"> X</p>
+        <p id="conversation-filter"></p>
     </div>
 
     <div id="conversation-box">
@@ -12,24 +12,32 @@
             <ng-container *ngFor="let message of conversation | async">
                 <ng-container *ngIf="(message.idSender === sender.idUser); then senderT; else recieverT"></ng-container>
                 <ng-template #senderT>
-                    <div class="message-box-message-sender-wrapper">
-                        <div id="message-box-message-sender-timer">{{message.sentDate | date :'medium'}}</div>
-                        <div class="message-box-message-sender">{{message.content}}</div>
+                    <div class="wrapper">
+                        <div class="message sender">
+                            <div class="date">{{message.sentDate | date :'medium'}}</div>
+                            <div class="senderMessage">{{sender.nick | titlecase}}</div>
+                            <div class="content">{{message.content}}</div>
+                        </div>
                     </div>
                 </ng-template>
 
                 <ng-template #recieverT>
-                    <div class="message-box-message-receiver-wrapper">
-                        <p id="message-box-message-receiver-timer">{{message.sentDate | date :'medium'}}</p>
-                        <div class="message-box-message-receiver">{{message.content}}</div>
+                    <div class="wrapper">
+                        <div class="message receiver">
+                            <div class="date">{{message.sentDate | date :'medium'}}</div>
+                            <div class="senderMessage">{{receiver.nick | titlecase}}</div>
+                            <div class="content">{{message.content}}</div>
+                        </div>
                     </div>
                 </ng-template>
             </ng-container>
 
         </div>
         <div *ngIf="displayLayout" class="conversation-input">
-            <input #inputMessageNode id="conversation-text-input" type="text">
-            <button id="conversation-button-send" (click)="sendMessage(inputMessageNode)"></button>
+            <div>
+                <input (keydown)="key($event)" #inputMessageNode id="text-input" type="text">
+                <button id="send-button" (click)="sendMessage(inputMessageNode)"></button>
+            </div>
         </div>
     </div>
 </div>
