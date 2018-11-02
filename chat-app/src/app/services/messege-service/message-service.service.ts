@@ -3,11 +3,11 @@ import {Injectable} from '@angular/core';
 import {MessagesRepositoryService} from '../../repository/message-repostiory/message-repository.service';
 import {UserDTO} from '../../repository/user-repository/user-d-t.o';
 import {MessageDTO} from '../../repository/message-repostiory/messageDTO';
-import {MessageSEND} from '../../repository/message-repostiory/messageSEND';
 import {WSRClientService} from "../WSRClient/wsrclient.service";
 import {LocalType} from "../WSRClient/types/LocalType";
 import {MessageDTO as MessageDTOWSR} from "../WSRClient/dto/MessageDTO";
 import {RemoteType} from "../WSRClient/types/RemoteType";
+import {BehaviorSubject, Observable} from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -18,15 +18,23 @@ export class MessageServiceService {
     private receiver: UserDTO;
     private onSetReceiverEvent: () => void;
     private messages: Array<MessageDTO>;
+    private messagesObs: BehaviorSubject<Array<MessageDTO>>;
 
-    constructor(private messageRepository: MessagesRepositoryService,
-                private wsr: WSRClientService) {
+    constructor(
+        private messageRepository: MessagesRepositoryService,
+        private wsr: WSRClientService
+    ) {
+
+        this.messages = [];
+        this.messagesObs = new BehaviorSubject<Array<MessageDTO>>(this.messages);
 
 
-        wsr.WRSClient.addProcedure(LocalType.ADDMESSAGE, new MessageDTOWSR(),data => {
+        wsr.WRSClient.addProcedure(LocalType.ADDMESSAGE, new MessageDTOWSR(), data => {
 
-            const messageDTO = new MessageDTO(null,data.getContent(),"",data.getSenderId(),data.getReceiverId());
+            console.log("ADD message")
+            const messageDTO = new MessageDTO(null, data.getContent(), "", data.getSenderId(), data.getReceiverId());
             this.messages.push(messageDTO);
+            this.messagesObs.next(this.messages);
 
         });
 
@@ -55,28 +63,25 @@ export class MessageServiceService {
     }
 
 
-    public getConversation(limit: number, startBound: number): Array<MessageDTO> {
+    public getConversation(limit: number, startBound: number): void {
         this.messageRepository.getConversation(this.sender, this.receiver, limit, startBound).subscribe(value => {
+            this.messagesObs.next(value)
             this.messages = value;
         });
-        return this.messages;
+    }
+
+    public getMessagesObs(): Observable<Array<MessageDTO>> {
+        return this.messagesObs.asObservable();
     }
 
 
     public sendMessage(content: string) {
         if (this.receiver) {
-            console.log(this.receiver);
-
-            console.log(Date.now().toString());
-            const messageDTO = new MessageDTO(null,content,"some time ago",this.sender.idUser,this.receiver.idUser);
-            this.messages.push(messageDTO);
 
             const messageDTOWSR = new MessageDTOWSR();
             messageDTOWSR.setContent(content);
             messageDTOWSR.setReceiverId(this.receiver.idUser);
             messageDTOWSR.setSenderId(this.sender.idUser);
-
-
             this.wsr.WRSClient.executeRemoteProcedure(RemoteType.FORWARDMESSAGE, messageDTOWSR)
         }
     }

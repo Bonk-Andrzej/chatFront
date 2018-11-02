@@ -32,13 +32,13 @@ export class ActiveUserListComponent implements OnInit {
                 this.users.push(new UserDTO(user.idUser, user.nick));
             }
         });
-        document.documentElement.style.setProperty('--status-color', '#df1b37');
+       // document.documentElement.style.setProperty('--status-color', '#df1b37');
     }
 
     setReceiver(user: UserDTO) {
         this.messageService.setReceiver(user);
         this.activeUserStatusBar.backgroundColor = '#56c130';
-        document.documentElement.style.setProperty('--status-color', '#56c130');
+       // document.documentElement.style.setProperty('--status-color', '#56c130');
     }
 
 }

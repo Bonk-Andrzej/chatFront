@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 import {MessageDTO} from '../../repository/message-repostiory/messageDTO';
 import {MessagesRepositoryService} from '../../repository/message-repostiory/message-repository.service';
@@ -6,6 +6,7 @@ import {AuthorizationServiceService} from '../../services/authorization-service/
 import {Router} from '@angular/router';
 import {MessageServiceService} from '../../services/messege-service/message-service.service';
 import {UserDTO} from '../../repository/user-repository/user-d-t.o';
+import {Observable} from "rxjs";
 
 
 @Component({
@@ -15,61 +16,60 @@ import {UserDTO} from '../../repository/user-repository/user-d-t.o';
 })
 export class ConversationsComponent implements OnInit {
 
-    public messageReceiver = 'MESSAGE RECEIVER';
-    public messageSender = 'MESSAGE SENDER';
-    public timeSender = '22:00';
-    public timeReceiver = '23:00';
-    public conversation: Array<MessageDTO>;
-
-
+    public conversation: Observable<Array<MessageDTO>>;
     public sender: UserDTO;
     public receiver: UserDTO;
-    public messagesListReceiver: Array<MessageDTO>;
-    public displayLayou = false;
-    public startBoundMessages: number;
-    public toBoundMessages: number;
+    public displayLayout = false;
     public conversationStatusBar = {
         'backgroundColor': '#df1b37'
     };
 
+    @ViewChild('conversationListRef')
+    private conversationListRef: ElementRef<HTMLDivElement>;
 
     constructor(private messagesRepository: MessagesRepositoryService,
                 private authorizationService: AuthorizationServiceService,
                 private messageService: MessageServiceService,
                 private router: Router) {
-        this.conversation = [];
-        this.messagesListReceiver = [];
+        this.conversation = this.messageService.getMessagesObs();
+        this.conversation.subscribe(() => {
+            console.log("update")
+            if (this.conversationListRef) {
+
+                const nativeElement = this.conversationListRef.nativeElement;
+                setTimeout(() => {
+                    console.log(nativeElement.scrollHeight)
+                    nativeElement.scrollTop = nativeElement.scrollHeight;
+                }, 0)
+            }
+        })
     }
 
     ngOnInit() {
         if (!this.authorizationService.isAuthorizated()) {
             this.router.navigateByUrl('/login');
+
         } else {
+
             this.messageService.onSetReceiver(() => {
                 this.getConversation(100, 0);
-                this.displayLayou = true;
+                this.displayLayout = true;
                 this.conversationStatusBar.backgroundColor = '#56c130';
             });
 
             this.sender = this.authorizationService.getAuthorizatedUser();
             this.messageService.setSender(this.sender);
-            console.log(this.sender);
-
-
         }
     }
 
-    public sendMessage() {
-        const content: HTMLInputElement = document.querySelector('#conversation-text-input');
-
-        const contentValue = content.value;
-        this.messageService.sendMessage(contentValue);
-
-        content.value = '';
+    public sendMessage(inputMessageNode: HTMLInputElement) {
+        const messageContent = inputMessageNode.value;
+        this.messageService.sendMessage(messageContent);
+        inputMessageNode.value = '';
     }
 
     public getConversation(limit: number, startBound: number) {
-        this.conversation = this.messageService.getConversation(limit, startBound);
+        this.messageService.getConversation(limit, startBound);
         this.receiver = this.messageService.getReceiver();
 
     }

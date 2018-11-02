@@ -2,20 +2,20 @@
     <div [ngStyle]="conversationStatusBar" id="conversation-bar"></div>
     <div id="conversation-header">
         <p id="conversation-brand-chat">Chat</p>
-        <p *ngIf="displayLayou" id="conversation-interlocutors">{{sender.nick}} : {{receiver.nick}}</p>
+        <p *ngIf="displayLayout" id="conversation-interlocutors">{{receiver.nick}}</p>
         <p id="conversation-filter"> X</p>
     </div>
 
-    <div id="conversation-box">
-        <div *ngIf="displayLayou" id="conversation-list">
+    <div  id="conversation-box"  >
+        <div *ngIf="displayLayout" id="conversation-list" #conversationListRef>
 
-            <ng-container *ngFor="let message of conversation">
+            <ng-container *ngFor="let message of conversation | async">
                 <ng-container *ngIf="(message.idSender === sender.idUser); then senderT; else recieverT"></ng-container>
 
                 <ng-template #senderT>
                     <div class="message-box-message-sender-wrapper">
                         <div id="message-box-message-sender-timer">{{message.sendDate}}</div>
-                        <div class="message-box-message-sender">{{message.content+ " send"}}-{{message.idSender}}-{{sender.idUser}}</div>
+                        <div class="message-box-message-sender">{{message.content}}</div>
                     </div>
                 </ng-template>
 
@@ -23,15 +23,15 @@
                 <ng-template #recieverT>
                     <div class="message-box-message-receiver-wrapper">
                         <p id="message-box-message-receiver-timer">{{message.sendDate}}</p>
-                        <div class="message-box-message-receiver">{{message.content+ " rec"}}</div>
+                        <div class="message-box-message-receiver">{{message.content}}</div>
                     </div>
                 </ng-template>
             </ng-container>
 
         </div>
-        <div *ngIf="displayLayou" class="conversation-input">
-            <input id="conversation-text-input" type="text">
-            <button id="conversation-button-send" (click)="sendMessage()"></button>
+        <div *ngIf="displayLayout" class="conversation-input">
+            <input #inputMessageNode id="conversation-text-input" type="text">
+            <button id="conversation-button-send" (click)="sendMessage(inputMessageNode)"></button>
         </div>
     </div>
 </div>
