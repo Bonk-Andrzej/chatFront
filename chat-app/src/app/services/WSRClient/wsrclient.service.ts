@@ -16,7 +16,7 @@ export class WSRClientService {
   constructor() {
 
     let wsrConnector = new WSRConnector<LocalType,RemoteType>();
-    this.wsrClient = wsrConnector.connect("ws://localhost:8080/socket");
+    this.wsrClient = wsrConnector.connect("ws://51.38.133.76:90/socket");
 
 
     this.wsrClient.addProcedure(LocalType.ERROR, new ErrorDTO(),data => {
