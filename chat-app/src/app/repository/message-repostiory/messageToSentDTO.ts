@@ -1,4 +1,4 @@
-export class MessageSEND {
+export class MessageToSentDTO {
 
     private _content: string;
 

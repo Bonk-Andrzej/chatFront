@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 
 import {UserRepositoryService} from '../../repository/user-repository/user-repository.service';
-import {MessageServiceService} from '../messege-service/message-service.service';
+import {MessageWsrService} from '../messege-service/message-wsr.service';
 import {UserDTO} from '../../repository/user-repository/user-d-t.o';
 
 @Injectable({

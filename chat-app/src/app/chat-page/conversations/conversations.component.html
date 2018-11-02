@@ -2,27 +2,25 @@
     <div [ngStyle]="conversationStatusBar" id="conversation-bar"></div>
     <div id="conversation-header">
         <p id="conversation-brand-chat">Chat</p>
-        <p *ngIf="displayLayout" id="conversation-interlocutors">{{receiver.nick}}</p>
+        <p *ngIf="displayLayout" id="conversation-interlocutors">{{receiver.nick | titlecase }}</p>
         <p id="conversation-filter"> X</p>
     </div>
 
-    <div  id="conversation-box"  >
+    <div id="conversation-box">
         <div *ngIf="displayLayout" id="conversation-list" #conversationListRef>
 
             <ng-container *ngFor="let message of conversation | async">
                 <ng-container *ngIf="(message.idSender === sender.idUser); then senderT; else recieverT"></ng-container>
-
                 <ng-template #senderT>
                     <div class="message-box-message-sender-wrapper">
-                        <div id="message-box-message-sender-timer">{{message.sendDate}}</div>
+                        <div id="message-box-message-sender-timer">{{message.sentDate | date :'medium'}}</div>
                         <div class="message-box-message-sender">{{message.content}}</div>
                     </div>
                 </ng-template>
 
-
                 <ng-template #recieverT>
                     <div class="message-box-message-receiver-wrapper">
-                        <p id="message-box-message-receiver-timer">{{message.sendDate}}</p>
+                        <p id="message-box-message-receiver-timer">{{message.sentDate | date :'medium'}}</p>
                         <div class="message-box-message-receiver">{{message.content}}</div>
                     </div>
                 </ng-template>

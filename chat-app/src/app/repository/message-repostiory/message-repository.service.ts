@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {MessageDTO} from './messageDTO';
-import {MessageSEND} from './messageSEND';
+import {MessageToSentDTO} from './messageToSentDTO';
 import {UserDTO} from '../user-repository/user-d-t.o';
 
 
@@ -32,7 +32,7 @@ export class MessagesRepositoryService {
         return this.http.get<Array<MessageDTO>>(this.host, {headers: headers});
     }
 
-    public postMessages(messageSEND: MessageSEND): Observable<MessageSEND> {
+    public postMessages(messageSEND: MessageToSentDTO): Observable<MessageToSentDTO> {
         const headers = this.getHeaders();
         console.log(JSON.stringify(messageSEND));
         console.log(messageSEND);
@@ -42,7 +42,7 @@ export class MessagesRepositoryService {
             idSender: messageSEND.idSender
         };
 
-        return this.http.post<MessageSEND>(this.host, messageToSend, {headers: headers});
+        return this.http.post<MessageToSentDTO>(this.host, messageToSend, {headers: headers});
     }
 
     public getMessages(sender: UserDTO, receiver: UserDTO, startBound: number, toBound: number): Observable<Array<MessageDTO>> {

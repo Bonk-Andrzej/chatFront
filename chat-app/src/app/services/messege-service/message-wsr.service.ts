@@ -12,7 +12,7 @@ import {BehaviorSubject, Observable} from "rxjs";
 @Injectable({
     providedIn: 'root'
 })
-export class MessageServiceService {
+export class MessageWsrService {
 
     private sender: UserDTO;
     private receiver: UserDTO;
@@ -31,8 +31,8 @@ export class MessageServiceService {
 
         wsr.WRSClient.addProcedure(LocalType.ADDMESSAGE, new MessageDTOWSR(), data => {
 
-            console.log("ADD message")
-            const messageDTO = new MessageDTO(null, data.getContent(), "", data.getSenderId(), data.getReceiverId());
+            console.log("ADD message: ",data)
+            const messageDTO = new MessageDTO(null, data.getContent(), data.getSentData(), data.getSenderId(), data.getReceiverId());
             this.messages.push(messageDTO);
             this.messagesObs.next(this.messages);
 
@@ -65,6 +65,7 @@ export class MessageServiceService {
 
     public getConversation(limit: number, startBound: number): void {
         this.messageRepository.getConversation(this.sender, this.receiver, limit, startBound).subscribe(value => {
+            console.log("Conversation REST >> :",value[1].sentDate, value)
             this.messagesObs.next(value)
             this.messages = value;
         });

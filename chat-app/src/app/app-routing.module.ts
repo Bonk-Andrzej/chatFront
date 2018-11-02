@@ -9,7 +9,7 @@ import {CssValidatorComponent} from "./css-validator/css-validator.component";
 
 const routes: Routes = [
     {path: '', component: LoginPageComponent},
-    {path: 'css-valid', component: CssValidatorComponent },
+    {path: 'css', component: CssValidatorComponent },
     {path: 'login', component: LoginPageComponent},
     {path: 'chat', component: ChatPageComponent},
 

@@ -4,7 +4,7 @@ import {MessageDTO} from '../../repository/message-repostiory/messageDTO';
 import {MessagesRepositoryService} from '../../repository/message-repostiory/message-repository.service';
 import {AuthorizationServiceService} from '../../services/authorization-service/authorization-service.service';
 import {Router} from '@angular/router';
-import {MessageServiceService} from '../../services/messege-service/message-service.service';
+import {MessageWsrService} from '../../services/messege-service/message-wsr.service';
 import {UserDTO} from '../../repository/user-repository/user-d-t.o';
 import {Observable} from "rxjs";
 
@@ -29,10 +29,11 @@ export class ConversationsComponent implements OnInit {
 
     constructor(private messagesRepository: MessagesRepositoryService,
                 private authorizationService: AuthorizationServiceService,
-                private messageService: MessageServiceService,
+                private messageServiceWSR: MessageWsrService,
                 private router: Router) {
-        this.conversation = this.messageService.getMessagesObs();
+        this.conversation = this.messageServiceWSR.getMessagesObs();
         this.conversation.subscribe(() => {
+
             console.log("update")
             if (this.conversationListRef) {
 
@@ -51,26 +52,26 @@ export class ConversationsComponent implements OnInit {
 
         } else {
 
-            this.messageService.onSetReceiver(() => {
+            this.messageServiceWSR.onSetReceiver(() => {
                 this.getConversation(100, 0);
                 this.displayLayout = true;
                 this.conversationStatusBar.backgroundColor = '#56c130';
             });
 
             this.sender = this.authorizationService.getAuthorizatedUser();
-            this.messageService.setSender(this.sender);
+            this.messageServiceWSR.setSender(this.sender);
         }
     }
 
     public sendMessage(inputMessageNode: HTMLInputElement) {
         const messageContent = inputMessageNode.value;
-        this.messageService.sendMessage(messageContent);
+        this.messageServiceWSR.sendMessage(messageContent);
         inputMessageNode.value = '';
     }
 
     public getConversation(limit: number, startBound: number) {
-        this.messageService.getConversation(limit, startBound);
-        this.receiver = this.messageService.getReceiver();
+        this.messageServiceWSR.getConversation(limit, startBound);
+        this.receiver = this.messageServiceWSR.getReceiver();
 
     }
 

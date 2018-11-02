@@ -1,15 +1,15 @@
 export class MessageDTO {
     private _id: number;
     private _content: string;
-    private _sendDate: string;
+    private _sentDate: string;
     private _idSender: number;
     private _idReceiver: number;
 
 
-    constructor(id: number, content: string, sendDate: string, idSender: number, idReceiver: number) {
+    constructor(id: number, content: string, sentDate: string, idSender: number, idReceiver: number) {
         this._id = id;
         this._content = content;
-        this._sendDate = sendDate;
+        this._sentDate = sentDate;
         this._idSender = idSender;
         this._idReceiver = idReceiver;
     }
@@ -32,12 +32,16 @@ export class MessageDTO {
         this._content = value;
     }
 
-    get sendDate(): string {
-        return this._sendDate;
+    get sentDate(): string {
+        return this._sentDate;
     }
 
-    set sendDate(value: string) {
-        this._sendDate = value;
+    get sendDateasDate():Date{
+        return new Date(parseInt(this.sentDate));
+    }
+
+    set sentDate(value: string) {
+        this._sentDate = value;
     }
 
     get idSender(): number {

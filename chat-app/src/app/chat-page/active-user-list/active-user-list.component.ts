@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 
 import {UserRepositoryService} from '../../repository/user-repository/user-repository.service';
 import {AuthorizationServiceService} from '../../services/authorization-service/authorization-service.service';
-import {MessageServiceService} from '../../services/messege-service/message-service.service';
+import {MessageWsrService} from '../../services/messege-service/message-wsr.service';
 import {UserDTO} from '../../repository/user-repository/user-d-t.o';
 
 @Component({
@@ -19,7 +19,7 @@ export class ActiveUserListComponent implements OnInit {
 
     constructor(private userRepository: UserRepositoryService,
                 private authorizationService: AuthorizationServiceService,
-                private messageService: MessageServiceService) {
+                private messageService: MessageWsrService) {
 
         this.users = [];
     }
@@ -32,13 +32,13 @@ export class ActiveUserListComponent implements OnInit {
                 this.users.push(new UserDTO(user.idUser, user.nick));
             }
         });
-       // document.documentElement.style.setProperty('--status-color', '#df1b37');
+        document.documentElement.style.setProperty('--status-color', '#df1b37');
     }
 
     setReceiver(user: UserDTO) {
         this.messageService.setReceiver(user);
         this.activeUserStatusBar.backgroundColor = '#56c130';
-       // document.documentElement.style.setProperty('--status-color', '#56c130');
+        document.documentElement.style.setProperty('--status-color', '#56c130');
     }
 
 }

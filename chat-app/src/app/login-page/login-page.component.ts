@@ -22,6 +22,12 @@ export class LoginPageComponent implements OnInit {
         'backgroundColor': '#56c130'
     };
 
+    public loginButtonsDisabled: boolean = true;
+    public loginButton = {
+        'backgroundColor': '#333',
+        'cursor': 'wait'
+}
+
 
     ngOnInit() {
     }
@@ -31,6 +37,13 @@ export class LoginPageComponent implements OnInit {
                 private authorizationService: AuthorizationServiceService,
                 private router: Router,
                 private wsr: WSRClientService) {
+
+        wsr.WRSClient.onOpen().subscribe(()=>{
+            this.loginButton.backgroundColor = "#56c130";
+            this.loginButton.cursor = "pointer";
+            this.loginButtonsDisabled = false;
+        })
+
     }
 
 
@@ -49,6 +62,7 @@ export class LoginPageComponent implements OnInit {
     }
 
     public loginUser() {
+
         const login: HTMLInputElement = document.querySelector('#login');
         const pass: HTMLInputElement = document.querySelector('#password');
 

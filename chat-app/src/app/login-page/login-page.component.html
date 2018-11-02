@@ -6,7 +6,7 @@
     <h3 id="logo-brand">Blue Chat</h3>
     <input id="login" class="default-radius" type="text" placeholder="  Login"><br/>
     <input id="password" class="default-radius"  type="password" placeholder="  Password"><br/>
+    <button [disabled]="loginButtonsDisabled" [ngStyle]=loginButton id="buttonLogIn" class="default-radius" (click)="loginUser()">Log in</button>
     <button id="buttonRegister" class="default-radius"  (click)="registerUser()">Register</button>
-    <button id="buttonLogIn" class="default-radius" (click)="loginUser()">Log in</button>
   </div>
 </div>

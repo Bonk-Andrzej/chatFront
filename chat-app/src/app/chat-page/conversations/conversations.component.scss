@@ -62,9 +62,10 @@
 
     #conversation-list::-webkit-scrollbar {
       background-color: $color-black;
+      width: 6px;
     }
     #conversation-list::-webkit-scrollbar-thumb {
-      background-color: $color-green;
+      background-color: $color-white;
     }
 
     #conversation-list {

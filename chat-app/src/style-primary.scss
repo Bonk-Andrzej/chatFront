@@ -5,7 +5,8 @@ $color-green: #56c130;
 $color-red: #df1b37;
 $color-black: #141718;
 $color-white: #e5e5e5;
-$font-Pacifico : "Pacifico";
+$font-Pacifico : 'Pacifico', cursive;
+$font-lato : 'Lato', sans-serif;
 
 html {
   height: 100%;
@@ -20,3 +21,6 @@ html {
   }
 }
 
+//Fonts
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
