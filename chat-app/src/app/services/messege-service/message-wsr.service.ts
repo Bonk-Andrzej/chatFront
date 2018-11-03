@@ -27,8 +27,6 @@ export class MessageWsrService {
 
         this.messages = [];
         this.messagesObs = new BehaviorSubject<Array<MessageDTO>>(this.messages);
-
-
         wsr.WRSClient.addProcedure(LocalType.ADDMESSAGE, new MessageDTOWSR(), data => {
 
             if (data.getReceiverId() == this.sender.idUser && data.getSenderId() == this.receiver.idUser) {
@@ -40,8 +38,6 @@ export class MessageWsrService {
             }
 
         });
-
-
         wsr.WRSClient.addProcedure(LocalType.ADDMYMESSAGE, new MessageDTOWSR(), data => {
 
             if (data.getSenderId() == this.sender.idUser) {
@@ -54,9 +50,7 @@ export class MessageWsrService {
 
         });
 
-
     }
-
 
     public setReceiver(receiver: UserDTO) {
         this.receiver = receiver;
@@ -81,9 +75,9 @@ export class MessageWsrService {
 
     public getConversation(limit: number, startBound: number): void {
         this.messageRepository.getConversation(this.sender, this.receiver, limit, startBound).subscribe(value => {
-            console.log("Conversation REST >> :", value[1].sentDate, value)
-            this.messagesObs.next(value)
+            console.log("Conversation REST >> :", value)
             this.messages = value;
+            this.messagesObs.next(this.messages)
         });
     }
 
