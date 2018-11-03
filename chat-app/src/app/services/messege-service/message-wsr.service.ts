@@ -31,10 +31,26 @@ export class MessageWsrService {
 
         wsr.WRSClient.addProcedure(LocalType.ADDMESSAGE, new MessageDTOWSR(), data => {
 
-            console.log("ADD message: ",data)
-            const messageDTO = new MessageDTO(null, data.getContent(), data.getSentData(), data.getSenderId(), data.getReceiverId());
-            this.messages.push(messageDTO);
-            this.messagesObs.next(this.messages);
+            if (data.getReceiverId() == this.sender.idUser && data.getSenderId() == this.receiver.idUser) {
+
+                console.log("ADD NEW message: ", data)
+                const messageDTO = new MessageDTO(null, data.getContent(), data.getSentData(), data.getSenderId(), data.getReceiverId());
+                this.messages.push(messageDTO);
+                this.messagesObs.next(this.messages);
+            }
+
+        });
+
+
+        wsr.WRSClient.addProcedure(LocalType.ADDMYMESSAGE, new MessageDTOWSR(), data => {
+
+            if (data.getSenderId() == this.sender.idUser) {
+
+                console.log("ADD MY message: ", data)
+                const messageDTO = new MessageDTO(null, data.getContent(), data.getSentData(), data.getSenderId(), data.getReceiverId());
+                this.messages.push(messageDTO);
+                this.messagesObs.next(this.messages);
+            }
 
         });
 
@@ -65,7 +81,7 @@ export class MessageWsrService {
 
     public getConversation(limit: number, startBound: number): void {
         this.messageRepository.getConversation(this.sender, this.receiver, limit, startBound).subscribe(value => {
-            console.log("Conversation REST >> :",value[1].sentDate, value)
+            console.log("Conversation REST >> :", value[1].sentDate, value)
             this.messagesObs.next(value)
             this.messages = value;
         });
