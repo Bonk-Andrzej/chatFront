@@ -38,6 +38,7 @@ export class MessageWsrService {
             }
 
         });
+
         wsr.WRSClient.addProcedure(LocalType.ADDMYMESSAGE, new MessageDTOWSR(), data => {
 
             if (data.getSenderId() == this.sender.idUser) {
@@ -54,6 +55,7 @@ export class MessageWsrService {
 
     public setReceiver(receiver: UserDTO) {
         this.receiver = receiver;
+        this.messages = [];
         if (this.onSetReceiverEvent) {
             this.onSetReceiverEvent();
         }
