@@ -27,8 +27,6 @@ export class MessageWsrService {
 
         this.messages = [];
         this.messagesObs = new BehaviorSubject<Array<MessageDTO>>(this.messages);
-
-
         wsr.WRSClient.addProcedure(LocalType.ADDMESSAGE, new MessageDTOWSR(), data => {
 
             if (data.getReceiverId() == this.sender.idUser && data.getSenderId() == this.receiver.idUser) {
@@ -40,7 +38,6 @@ export class MessageWsrService {
             }
 
         });
-
 
         wsr.WRSClient.addProcedure(LocalType.ADDMYMESSAGE, new MessageDTOWSR(), data => {
 
@@ -54,12 +51,11 @@ export class MessageWsrService {
 
         });
 
-
     }
-
 
     public setReceiver(receiver: UserDTO) {
         this.receiver = receiver;
+        this.messages = [];
         if (this.onSetReceiverEvent) {
             this.onSetReceiverEvent();
         }
