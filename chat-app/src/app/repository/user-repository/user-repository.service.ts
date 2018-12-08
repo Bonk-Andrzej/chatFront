@@ -45,12 +45,6 @@ export class UserRepositoryService {
         return this.http.put<NewUser>(this.host, {nick: newUser.nick, password: newUser.password, headers});
     }
 
-    // public updateUser(newUser: NewUser, idUser: number): Observable<NewUser> {
-    //     // const param = new HttpParams().set('idUser', idUser + '');
-    //     // const headers = this.getHeaders();
-    //     // return this.http.post<NewUser>(this.host, {{nick: newUser.nick, password: newUser.password, headers});
-    // }
-
     public deleteUser(id: number) {
 
         return this.http.delete<UserDTO>(this.host + '/' + id, {headers: this.getHeaders()});
@@ -58,7 +52,8 @@ export class UserRepositoryService {
 
     public getUserByNickPass(nick: string, pass: string) {
         const headers = this.getHeaders();
-        return this.http.get<UserDTO>(this.host + '/login/' + nick + ',' + pass);
+        const userDto: NewUser = new NewUser(nick, pass);
+        return this.http.post(this.host + '/login/', userDto);
     }
 }
 
